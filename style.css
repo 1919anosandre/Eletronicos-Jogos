@@ -298,7 +298,7 @@ section {
     }
 
     .Container-Principal {
-        padding: 18px 8%;
+        padding: 18px 4%;
         width: 100%;
     }
 
@@ -313,6 +313,9 @@ section {
         font-size: 17px;
         text-align: center;
     }
+    .Container-Jogos-PS3{
+    width: 100%;
+    }
 
     .Jogos {
         flex-direction: column;
@@ -326,8 +329,17 @@ section {
     .Inputs-Form {
         width: 80%;
     }
+    .Container-Form{
+    width: 100%;
+    }
 
     .Container-Form img {
         width: 80%;
+    }
+    .Container-Footer h1{
+font-size: 18px;
+    }
+    .Container-Footer span{
+ font-size: 18px;
     }
 }
