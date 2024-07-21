@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    text-transform: capitalize;
+    padding: 0;
+    list-style: none;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+    user-select: none;
+
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/img-body.webp');
+    background-position: center;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5b5b5b;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #1d1d1d;
+    border-top-right-radius: 5px;
+}
+
+section {
+    height: 100vh;
+}
+
+.Logo-Controle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 120px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.Logo-Controle img {
+    height: auto;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.Container-Nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.Container-Nav li {
+    color: rgb(145, 57, 228);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.Container-Nav li:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+
+.Container-Principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 300px auto;
+
+}
+
+.Container-Principal h1 {
+    font-size: 5em;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f, #00f);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    animation: ps2Animation 5s infinite linear;
+    background-size: 200% 200%;
+
+}
+
+.Container-Principal p {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.Container-Principal button {
+    background-color: rgb(25, 248, 81);
+    color: rgb(26, 22, 22);
+    padding: 10px;
+    border-radius: 7px;
+    width: 100px;
+    border: 01px solid black;
+    margin-top: 4px;
+
+}
+
+.Container-Jogos-PS3 {
+    background-color: #1d1a1a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 5px 5%;
+}
+
+.Container-Jogos-PS4 {
+    background-color: #1d1a1a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 5px 5%;
+}
+
+
+.Jogos {
+    background-color: rgb(8, 8, 8);
+    width: 100%;
+    height: 170px;
+    max-width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    border: 01px solid rgb(5, 5, 5);
+    margin-top: 8px;
+}
+
+.Jogos img {
+    height: 135px;
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    /* Garante que a imagem ocupe a área designada sem distorção */
+    margin-top: 0;
+    /* Garante que a imagem esteja no topo */
+
+}
+
+.Jogos button {
+    background-color: rgb(145, 57, 228);
+
+    color: rgb(7, 7, 7);
+    border-radius: 7px;
+    width: 60%;
+    padding: 4px;
+    margin-top: 8px;
+}
+
+.Jogos button:hover {
+    cursor: pointer;
+    background-color: rgb(109, 17, 109);
+
+
+}
+
+.Container-Form {
+    display: flex;
+    background: rgb(14, 13, 13);
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.Container-Form img {
+    height: auto;
+    width: 500px;
+}
+
+.Inputs-Form h1 {
+    font-size: 1.4rem;
+    color: #ccc;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.Inputs-Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgb(14, 12, 12);
+    max-width: 350px;
+    width: 100%;
+    height: 350px;
+    background-color: rgb(145, 57, 228);
+    border-radius: 7px;
+}
+
+
+.Inputs-Form input {
+    background-color: #0e0d0d;
+    color: #ccc;
+    border-radius: 7px;
+    border: 1px solid rgb(14, 12, 12);
+    padding: 10px;
+    width: 80%;
+    margin-top: 15px;
+}
+
+.Inputs-Form button {
+    width: 50%;
+    background-color: rgb(18, 250, 18);
+    color: #201c1c;
+    border-radius: 7px;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.Container-Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(14, 13, 13);
+}
+
+.Container-Footer h1 {
+    font-size: 1.4rem;
+    color: #ccc;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+
+}
+
+.Container-Footer svg {
+    margin-left: 15px;
+}
+
+.Container-Footer span {
+    margin-left: 15px;
+    color: #ccc;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-size: 1.1rem;
+}
+
+
+
+@keyframes ps2Animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .Container-Nav {
+        display: none;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .Container-Principal {
+        padding: 18px 8%;
+        width: 100%;
+    }
+
+    .Container-Principal h1 {
+        width: 70%;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .Container-Principal p {
+        width: 70%;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .Jogos {
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .Container-Form {
+        flex-direction: column;
+    }
+
+    .Inputs-Form {
+        width: 80%;
+    }
+
+    .Container-Form img {
+        width: 80%;
+    }
+}
