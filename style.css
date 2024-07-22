@@ -24,6 +24,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -40,10 +41,10 @@ main {
     border-top-right-radius: 5px;
 }
 
-section {
+/*section {
     height: 100vh;
 }
-
+*/
 .Logo {
     display: flex;
     align-items: center;
@@ -143,7 +144,7 @@ section {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    height: 100vh;
+    /*height: 100vh;*/
     overflow-y: auto;
     padding: 5px 5%;
 }
@@ -154,7 +155,7 @@ section {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    height: 100vh;
+   /* height: 100vh; */
     overflow-y: auto;
     padding: 5px 5%;
 }
@@ -207,7 +208,7 @@ section {
     background: rgb(255, 238, 238);
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+   height: 100%; 
     width: 100%;
 
 }
@@ -282,7 +283,7 @@ section {
     border: 1px solid rgb(14, 12, 12);
     max-width: 350px;
     width: 100%;
-    height: 320px;
+    height: 250px;
     background-color: rgb(96, 15, 172);
     border-radius: 7px;
 }
