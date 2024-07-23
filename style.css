@@ -17,6 +17,10 @@ body {
     background-repeat: no-repeat;
     background-image: url('img/img-body.webp');
     background-position: center;
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+
 
 }
 
@@ -24,7 +28,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -107,8 +111,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 300px auto;
-
+    margin: 100px auto 0;
 }
 
 .Container-Principal h1 {
@@ -145,7 +148,6 @@ main {
     align-items: center;
     flex-wrap: wrap;
     /*height: 100vh;*/
-    overflow-y: auto;
     padding: 5px 5%;
 }
 
@@ -155,8 +157,7 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-   /* height: 100vh; */
-    overflow-y: auto;
+    /* height: 100vh; */
     padding: 5px 5%;
 }
 
@@ -203,17 +204,21 @@ main {
 
 }
 
-.Container-Console {
+.Container-Console,
+.Container-PC {
     display: flex;
     background: rgb(255, 238, 238);
     justify-content: space-around;
     align-items: center;
-   height: 100%; 
+    height: 400px;
     width: 100%;
 
 }
 
-.Console {
+
+
+.Console,
+.PC {
     max-width: 250px;
     height: 250px;
     width: 100%;
@@ -228,17 +233,20 @@ main {
 
 }
 
-.Console:hover {
+.Console:hover,
+.PC:hover {
     transform: scale(1.02);
     transition: 1s;
 }
 
-.Console img {
+.Console img,
+.PC img {
     height: auto;
     width: 160px;
 }
 
-.Console button {
+.Console button,
+.PC button {
     background-color: rgb(24, 23, 26);
     color: rgb(255, 241, 241);
     border-radius: 7px;
@@ -247,7 +255,8 @@ main {
     margin-top: 15px;
 }
 
-.Console button:hover {
+.Console button:hover,
+.PC button:hover {
     background-color: rgb(9, 9, 10);
     cursor: pointer;
 
@@ -359,18 +368,16 @@ main {
 }
 
 @media all and (max-width: 767px) {
+
     .Container-Nav {
         display: none;
     }
 
-    body {
-        width: 100%;
-        height: 100vh;
-    }
 
     .Container-Principal {
         padding: 18px 4%;
         width: 100%;
+
     }
 
     .Container-Principal h1 {
@@ -385,8 +392,18 @@ main {
         text-align: center;
     }
 
-    .Container-Jogos-PS3 {
+    .Container-Jogos-PS3,
+    .Container-Jogos-PS4,
+    .Container-Console,
+    .Container-PC {
         width: 100%;
+    }
+
+
+    .Console,
+    .PC {
+        flex-direction: column;
+        width: 70%;
     }
 
     .Jogos {
