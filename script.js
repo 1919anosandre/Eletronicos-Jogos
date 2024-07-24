@@ -17,9 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const Consoles = document.querySelector('.Console-li')
         const PC = document.querySelector('.PC-Gamer')
 
+        Container_Principal.style.opacity = '0';
         Container_JogosPs4.style.display = 'none'
         Container_JogosPs3.style.display = 'flex'
         Container_PC.style.display = 'none'
+
+
+
+        setTimeout(() => {
+            let opacity = 0;
+            const interval = setInterval(() => {
+                opacity += 0.05;
+                Container_Principal.style.opacity = opacity.toString();
+
+                if (opacity >= 1) {
+                    clearInterval(interval);
+                }
+            }, 100); // Ajuste o tempo para suavidade desejada
+        }, 1000); // Tempo de espera inicial de 3 segundos
+
 
 
         Inicio.addEventListener("click", () => {
@@ -78,3 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     exibir_Ocultar_Container()
 })
+
