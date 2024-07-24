@@ -49,15 +49,12 @@ main {
     height: 100vh;
 }
 */
+/* Contêiner principal da logo */
 .Logo {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 100px;
-
-}
-
-.Logo li {
     font-size: 1.4rem;
     font-weight: bold;
     background: linear-gradient(90deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f, #00f);
@@ -71,22 +68,33 @@ main {
 
 }
 
+
+
+/* Estilização da imagem da logo */
 .Logo img {
     height: auto;
     width: 60px;
     margin-right: 10px;
 }
 
+/* Estilização do contêiner da navegação */
 .Container-Nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(8, 8, 8);
     top: 0;
     position: fixed;
     width: 100%;
 }
 
+.Nav-Bar {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/* Estilização dos itens da navegação */
 .Inicio,
 .Jogos-PS3,
 .Jogos-PS4,
@@ -97,13 +105,21 @@ main {
     font-size: 1.3rem;
     letter-spacing: 2px;
     font-weight: 600;
+    padding: 15px;
 }
 
-.Container-Nav li:hover {
+.Inicio:hover,
+.Jogos-PS3:hover,
+.Jogos-PS4:hover,
+.Jogos-PS5:hover,
+.PC-Gamer:hover,
+.Console-li:hover {
     cursor: pointer;
     transform: scale(1.05);
     transition: 1s;
 }
+
+
 
 
 .Container-Principal {
@@ -369,40 +385,44 @@ main {
 
 @media all and (max-width: 767px) {
 
+
     .Container-Nav {
         display: none;
     }
 
 
     .Container-Principal {
-        padding: 18px 4%;
         width: 100%;
 
     }
 
     .Container-Principal h1 {
-        width: 70%;
-        font-size: 30px;
-        text-align: center;
+        font-size: 45px;
     }
 
     .Container-Principal p {
-        width: 70%;
-        font-size: 17px;
-        text-align: center;
+        font-size: 20px;
+        padding: 18px 4%;
+
     }
 
     .Container-Jogos-PS3,
     .Container-Jogos-PS4,
     .Container-Console,
-    .Container-PC {
+    .Container-PC,
+    .Container-Form {
         width: 100%;
+    }
+
+    .Container-Console,
+    .Container-PC {
+        height: 100vh;
+        flex-direction: column;
     }
 
 
     .Console,
     .PC {
-        flex-direction: column;
         width: 70%;
     }
 
@@ -416,15 +436,17 @@ main {
     }
 
     .Inputs-Form {
-        width: 80%;
+        width: 60%;
     }
 
-    .Container-Form {
-        width: 100%;
+    .Inputs-Form input {
+        width: 70%;
     }
+
+
 
     .Container-Form img {
-        width: 80%;
+        width: 70%;
     }
 
     .Container-Footer h1 {
