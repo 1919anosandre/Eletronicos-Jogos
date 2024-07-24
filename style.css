@@ -424,6 +424,7 @@ main {
     .Console,
     .PC {
         width: 70%;
+        margin-top: 6px;
     }
 
     .Jogos {
