@@ -446,7 +446,7 @@ main {
 
 
 
-    .Container-Form img {
+    .Container-Form img , .Container-Console img {
         width: 70%;
     }
 
