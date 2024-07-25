@@ -95,3 +95,43 @@ document.addEventListener('DOMContentLoaded', () => {
     exibir_Ocultar_Container()
 })
 
+const quantidade_carrinho = document.querySelector('.Quantidade-Pedido-Carrinho')
+const the_last_of_us = document.querySelector('.pedir-the-last-of-us')
+const Container_Pedido = document.querySelector('.Container-Pedido')
+const Carrinho = document.querySelector('#Carrinho')
+const Quantidade_Input = document.querySelector('.Quantidade')
+const Preco = document.querySelector('.Preco')
+const Finalizar_Pedido = document.querySelector('#Finalizar-Pedido')
+
+let quantidadeCarrinho = 0;
+
+the_last_of_us.addEventListener('click', () => {
+    quantidadeCarrinho++;
+
+    quantidade_carrinho.textContent = quantidadeCarrinho
+
+})
+
+Carrinho.addEventListener('click', () => {
+
+    if (quantidadeCarrinho > 0) {
+        Container_Pedido.style.display = 'flex'
+    } else {
+        Container_Pedido.style.display = 'none'
+    }
+})
+
+let precoTotalCarrinho = 0;
+let precoBase = 50;
+
+
+const quantidade = parseInt(Quantidade_Input.value, 10) || 0;
+const verificar_preco = parseFloat(Preco) || 0;
+
+const precoTotal = precoBase * quantidade;
+precoTotalCarrinho += precoTotal;
+Preco.textContent = `R$ ${precoTotal.toFixed(2)}`;
+
+
+Finalizar_Pedido.textContent = `Finalizar Pedido R$ ${precoTotalCarrinho.toFixed(2)}`
+
