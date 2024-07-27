@@ -80,12 +80,12 @@ main {
 
 /* Tema escuro */
 body.dark-theme {
-    background: rgb(14, 13, 13);
+    --background-color: rgb(14, 13, 13);
     --text-color: #ffffff;
     --header-background: #100e14;
     --link-color: #c04a62;
     --button-background: #141414;
-    --button-background-hover:yellow;
+    --button-background-hover: yellow;
     --button-text-color: #ffffff;
 }
 
@@ -95,7 +95,26 @@ body {
     color: var(--text-color);
 }
 
-header, footer , nav {
+.Container-Form {
+    background-size: cover;
+    /* Ajusta a imagem para cobrir toda a área */
+    background-position: center;
+    /* Centraliza a imagem */
+}
+
+body.light-theme .Container-Form {
+    background-image: url('img/gta-body.png');
+    /* Imagem para o tema claro */
+}
+
+body.dark-theme .Container-Form {
+    background-image: url('img/img-red2-removebg-preview.png');
+    /* Imagem para o tema escuro */
+}
+
+header,
+footer,
+nav {
     background-color: var(--header-background);
 }
 
@@ -107,16 +126,18 @@ button {
     background-color: var(--button-background);
     color: var(--button-text-color);
 }
-#theme-toggle{
-border-radius: 50px;
-height: 20px;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 50px;
-margin: auto 20px;
-font-size: 15px;
+
+#theme-toggle {
+    border-radius: 50px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    margin: auto 20px;
+    font-size: 15px;
 }
+
 /* Estilização da imagem da logo */
 .Logo img {
     height: auto;
@@ -186,20 +207,23 @@ font-size: 15px;
     margin: 100px auto 0;
     justify-content: center;
 }
-.Titulo-Paragrafo{
-flex-direction: column;
-align-items: center;
-display: flex;
+
+.Titulo-Paragrafo {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
 }
-.Img-Principal{
-display: flex;
-justify-content: space-around;
-margin-left: 100px;
+
+.Img-Principal {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 100px;
 }
-.Img-Principal img{
-height: 350px;
-width: 100%;
-max-width: 450px;
+
+.Img-Principal img {
+    height: 350px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .Container-Principal h1 {
@@ -217,7 +241,7 @@ max-width: 450px;
 }
 
 .Container-Principal button {
-   
+
     padding: 10px;
     border-radius: 7px;
     width: 100px;
@@ -324,7 +348,7 @@ max-width: 450px;
 
 .Console button,
 .PC button {
- 
+
     border-radius: 7px;
     width: 60%;
     padding: 10px;
@@ -342,16 +366,19 @@ max-width: 450px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+/*
 .Container-Form img {
     height: 300px;
     width: 300px;
 }
-
+*/
 .Inputs-Form h1 {
     font-size: 1.4rem;
     color: #fff9f9;
@@ -364,11 +391,11 @@ max-width: 450px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid rgb(14, 12, 12);
+    border: 1px solid rgb(31, 29, 29);
     max-width: 350px;
     width: 100%;
-    height: 250px;
-    background-color: rgb(31, 29, 32);
+    height: 300px;
+    background-color: rgba(7, 6, 7, 0.5);
     border-radius: 7px;
 }
 
@@ -552,10 +579,11 @@ max-width: 450px;
 
     }
 
-    .Img-Principal{
+    .Img-Principal {
         justify-content: center;
         align-items: center;
     }
+
     .Container-Principal h1 {
         font-size: 45px;
     }
@@ -598,6 +626,10 @@ max-width: 450px;
 
     .Inputs-Form {
         width: 60%;
+    }
+
+    .Inputs-Form h1 {
+        font-size: 17px;
     }
 
     .Inputs-Form input {
