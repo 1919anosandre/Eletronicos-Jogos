@@ -136,16 +136,15 @@ Preco.textContent = `R$ ${precoTotal.toFixed(2)}`;
 Finalizar_Pedido.textContent = `Finalizar Pedido R$ ${precoTotalCarrinho.toFixed(2)}`
 
 
-// script.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('theme-toggle');
     const body = document.body;
-   
 
     // Função para alternar o tema
     function toggleTheme() {
         body.classList.toggle('dark-theme');
+        body.classList.toggle('light-theme');
         const isDarkTheme = body.classList.contains('dark-theme');
         localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
     }
@@ -154,11 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-theme');
+    } else {
+        body.classList.add('light-theme');
     }
 
     // Adicionar o evento de clique ao botão
     toggleButton.addEventListener('click', toggleTheme);
-})
+});
+
 
 // script.js
 
