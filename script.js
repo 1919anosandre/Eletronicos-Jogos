@@ -135,3 +135,46 @@ Preco.textContent = `R$ ${precoTotal.toFixed(2)}`;
 
 Finalizar_Pedido.textContent = `Finalizar Pedido R$ ${precoTotalCarrinho.toFixed(2)}`
 
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+   
+
+    // Função para alternar o tema
+    function toggleTheme() {
+        body.classList.toggle('dark-theme');
+        const isDarkTheme = body.classList.contains('dark-theme');
+        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+    }
+
+    // Carregar o tema salvo
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+    }
+
+    // Adicionar o evento de clique ao botão
+    toggleButton.addEventListener('click', toggleTheme);
+})
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slideshow = document.getElementById('slideshow');
+    const images = [
+        'img/ellie-removebg-preview.png',
+        'img/far-cry-viloes-removebg-preview.png',
+        'img/gta5.wallpaper-removebg-preview.png'
+    ];
+    let currentImageIndex = 0;
+
+    function changeImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        slideshow.src = images[currentImageIndex];
+    }
+
+    setInterval(changeImage, 3000); // Muda a imagem a cada 3 segundos
+});
