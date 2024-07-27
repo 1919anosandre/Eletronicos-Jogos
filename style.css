@@ -15,11 +15,11 @@ body {
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('img/img-body.webp');
     background-position: center;
     margin: 0;
     /* Remove margens padrão */
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 
 
 }
@@ -68,8 +68,55 @@ main {
 
 }
 
+/* Tema claro */
+:root {
+    --background-color: #ffffff;
+    --text-color: #0e0d0d;
+    --header-background: #d4c8c8;
+    --link-color: #1e90ff;
+    --button-background: #aaaaaa;
+    --button-text-color: #000000;
+}
 
+/* Tema escuro */
+body.dark-theme {
+    background: rgb(14, 13, 13);
+    --text-color: #ffffff;
+    --header-background: #100e14;
+    --link-color: #c04a62;
+    --button-background: #141414;
+    --button-background-hover:yellow;
+    --button-text-color: #ffffff;
+}
 
+/* Aplicar as variáveis */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, footer , nav {
+    background-color: var(--header-background);
+}
+
+a {
+    color: var(--link-color);
+}
+
+button {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+}
+#theme-toggle{
+border-radius: 50px;
+height: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50px;
+margin: auto 20px;
+font-size: 15px;
+}
 /* Estilização da imagem da logo */
 .Logo img {
     height: auto;
@@ -82,7 +129,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(8, 8, 8);
     top: 0;
     position: fixed;
     width: 100%;
@@ -114,7 +160,6 @@ main {
 .Jogos-PS5,
 .PC-Gamer,
 .Console-li {
-    color: rgb(145, 57, 228);
     font-size: 1.3rem;
     letter-spacing: 2px;
     font-weight: 600;
@@ -137,22 +182,34 @@ main {
 
 .Container-Principal {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin: 100px auto 0;
+    justify-content: center;
+}
+.Titulo-Paragrafo{
+flex-direction: column;
+align-items: center;
+display: flex;
+}
+.Img-Principal{
+display: flex;
+justify-content: space-around;
+margin-left: 100px;
+}
+.Img-Principal img{
+height: 350px;
+width: 100%;
+max-width: 450px;
 }
 
 .Container-Principal h1 {
     font-size: 5em;
     font-weight: bold;
-    color: #ffffff;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
 
 }
 
 .Container-Principal p {
-    color: #ffffff;
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 10px;
@@ -160,8 +217,7 @@ main {
 }
 
 .Container-Principal button {
-    background-color: rgb(25, 248, 81);
-    color: rgb(26, 22, 22);
+   
     padding: 10px;
     border-radius: 7px;
     width: 100px;
@@ -171,7 +227,6 @@ main {
 }
 
 .Container-Jogos-PS3 {
-    background-color: #1d1a1a;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -181,7 +236,6 @@ main {
 }
 
 .Container-Jogos-PS4 {
-    background-color: #1d1a1a;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -217,9 +271,6 @@ main {
 }
 
 .Jogos button {
-    background-color: rgb(145, 57, 228);
-
-    color: rgb(7, 7, 7);
     border-radius: 7px;
     width: 60%;
     padding: 4px;
@@ -228,7 +279,6 @@ main {
 
 .Jogos button:hover {
     cursor: pointer;
-    background-color: rgb(109, 17, 109);
 
 
 }
@@ -236,7 +286,6 @@ main {
 .Container-Console,
 .Container-PC {
     display: flex;
-    background: rgb(255, 238, 238);
     justify-content: space-around;
     align-items: center;
     height: 400px;
@@ -249,10 +298,9 @@ main {
 .Console,
 .PC {
     max-width: 250px;
-    height: 250px;
+    height: 200px;
     width: 100%;
-    background: rgb(255, 233, 238);
-    box-shadow: 2px 4px 4px rgb(0, 0, 0);
+    box-shadow: 2px 4px 4px rgb(43, 40, 40);
     border-radius: 7px;
     display: flex;
     align-items: center;
@@ -276,8 +324,7 @@ main {
 
 .Console button,
 .PC button {
-    background-color: rgb(24, 23, 26);
-    color: rgb(255, 241, 241);
+ 
     border-radius: 7px;
     width: 60%;
     padding: 10px;
@@ -293,7 +340,6 @@ main {
 
 .Container-Form {
     display: flex;
-    background: rgb(14, 13, 13);
     justify-content: space-around;
     align-items: center;
     height: 100%;
@@ -302,8 +348,8 @@ main {
 }
 
 .Container-Form img {
-    height: auto;
-    width: 500px;
+    height: 300px;
+    width: 300px;
 }
 
 .Inputs-Form h1 {
@@ -322,7 +368,7 @@ main {
     max-width: 350px;
     width: 100%;
     height: 250px;
-    background-color: rgb(96, 15, 172);
+    background-color: rgb(31, 29, 32);
     border-radius: 7px;
 }
 
@@ -331,7 +377,7 @@ main {
     background-color: #0e0d0d;
     color: #ccc;
     border-radius: 7px;
-    border: 1px solid rgb(14, 12, 12);
+    border: 1px solid rgb(70, 65, 65);
     padding: 15px;
     width: 80%;
     margin-top: 15px;
@@ -340,7 +386,7 @@ main {
 
 .Inputs-Form button {
     width: 70%;
-    background-color: rgb(46, 0, 32);
+    background-color: rgb(20, 20, 20);
     color: #ffffff;
     border-radius: 7px;
     margin-top: 15px;
@@ -350,7 +396,7 @@ main {
 
 .Inputs-Form button:hover {
     cursor: pointer;
-    background-color: rgb(24, 0, 24);
+    background-color: rgb(12, 12, 12);
 }
 
 .Container-Footer {
@@ -362,7 +408,7 @@ main {
 
 .Container-Footer h1 {
     font-size: 1.4rem;
-    color: #ccc;
+    color: rgb(255, 215, 0);
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -371,11 +417,12 @@ main {
 
 .Container-Footer svg {
     margin-left: 15px;
+    color: rgb(255, 215, 0);
 }
 
 .Container-Footer span {
     margin-left: 15px;
-    color: #ccc;
+    color: rgb(255, 215, 0);
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     font-size: 1.1rem;
 }
@@ -501,9 +548,14 @@ main {
 
     .Container-Principal {
         width: 100%;
+        flex-direction: column;
 
     }
 
+    .Img-Principal{
+        justify-content: center;
+        align-items: center;
+    }
     .Container-Principal h1 {
         font-size: 45px;
     }
