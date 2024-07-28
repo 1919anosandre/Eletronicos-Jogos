@@ -23,6 +23,10 @@ body {
 
 
 }
+html{
+    overflow-x: hidden;
+
+}
 
 main {
     display: flex;
@@ -611,7 +615,7 @@ button {
 @media all and (max-width: 767px) {
 
     .Nav-Bar {
-        top: 5vh;
+        top: 8vh;
         width: 100%;
         height: 45vh;
         display: flex;
@@ -632,7 +636,7 @@ button {
 
     .Container-Nav #theme-toggle {
         top: 0;
-        margin-top: -60px;
+        margin-top: -110px;
         margin-right: 300px;
 
     }
@@ -647,6 +651,7 @@ button {
     .Nav-Bar.active {
         transform: translateX(0);
         background: #23232e;
+        user-select: auto;
     }
 
 
