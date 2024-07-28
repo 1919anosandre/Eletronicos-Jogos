@@ -670,6 +670,9 @@ button {
         align-items: center;
         margin-right: 100px;
     }
+    .Img-Principal img{
+    width: 90%;
+    }
 
     .Container-Principal h1 {
         font-size: 45px;
