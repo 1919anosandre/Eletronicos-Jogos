@@ -256,6 +256,7 @@ button {
 .Titulo-Paragrafo {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     display: flex;
 }
 
@@ -667,6 +668,7 @@ button {
     .Img-Principal {
         justify-content: center;
         align-items: center;
+        margin-right: 100px;
     }
 
     .Container-Principal h1 {
