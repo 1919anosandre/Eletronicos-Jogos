@@ -68,6 +68,47 @@ main {
 
 }
 
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+
+.mobile-menu .line1,
+.line2,
+.line3 {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
 /* Tema claro */
 :root {
     --background-color: #ffffff;
@@ -413,7 +454,8 @@ button {
 
 .Inputs-Form button {
     width: 70%;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(12, 12, 12);
+
     color: #ffffff;
     border-radius: 7px;
     margin-top: 15px;
@@ -423,7 +465,8 @@ button {
 
 .Inputs-Form button:hover {
     cursor: pointer;
-    background-color: rgb(12, 12, 12);
+    background-color: rgb(20, 20, 20);
+
 }
 
 .Container-Footer {
@@ -567,10 +610,47 @@ button {
 
 @media all and (max-width: 767px) {
 
+    .Nav-Bar {
+        top: 5vh;
+        width: 100%;
+        height: 45vh;
+        display: flex;
+        /* Make it a flex container */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        position: absolute;
 
-    .Container-Nav {
-        display: none;
     }
+
+    .Nav-Bar li {
+        margin-left: 0;
+        opacity: 0;
+        font-size: 1.6rem;
+    }
+
+    .Container-Nav #theme-toggle {
+        top: 0;
+        margin-top: -60px;
+        margin-right: 300px;
+
+    }
+
+
+
+    .mobile-menu {
+        display: block;
+
+    }
+
+    .Nav-Bar.active {
+        transform: translateX(0);
+        background: #23232e;
+    }
+
+
+
 
 
     .Container-Principal {
