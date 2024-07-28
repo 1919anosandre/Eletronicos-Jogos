@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Container_PC.style.display = 'none'
             Inicio.style.borderBottom = 'none'
             JogosPS4.style.borderBottom = 'none'
+            JogosPS3.style.borderBottom = 'none'
             PC.style.borderBottom = 'none'
         });
 
