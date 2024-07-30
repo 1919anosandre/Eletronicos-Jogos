@@ -315,13 +315,14 @@ main {
     max-width: 250px;
     height: 200px;
     width: 100%;
-    box-shadow: 2px 4px 4px rgb(43, 40, 40);
+    box-shadow: 2px 4px 4px rgb(12, 11, 11);
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 10px;
+    background-color: #23232e;
 
 }
 
@@ -344,11 +345,14 @@ main {
     width: 60%;
     padding: 10px;
     margin-top: 15px;
+    background-color: #ffffff;
+    color:#141414 ;
 }
 
 .Console button:hover,
 .PC button:hover {
-    background-color: rgb(9, 9, 10);
+    background-color: #141414;
+    color: #ffffff;
     cursor: pointer;
 
 }
