@@ -19,11 +19,12 @@ body {
     margin: 0;
     /* Remove margens padrão */
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: rgb(14, 13, 13);
 
 
 }
-html{
+
+html {
     overflow-x: hidden;
 
 }
@@ -113,77 +114,7 @@ main {
     transform: rotate(45deg) translate(-5px, -7px);
 }
 
-/* Tema claro */
-:root {
-    --background-color: #ffffff;
-    --text-color: #0e0d0d;
-    --header-background: #d4c8c8;
-    --link-color: #1e90ff;
-    --button-background: #aaaaaa;
-    --button-text-color: #000000;
-}
 
-/* Tema escuro */
-body.dark-theme {
-    --background-color: rgb(14, 13, 13);
-    --text-color: #ffffff;
-    --header-background: #100e14;
-    --link-color: #c04a62;
-    --button-background: #141414;
-    --button-background-hover: yellow;
-    --button-text-color: #ffffff;
-}
-
-/* Aplicar as variáveis */
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-.Container-Form {
-    background-size: cover;
-    /* Ajusta a imagem para cobrir toda a área */
-    background-position: center;
-    /* Centraliza a imagem */
-}
-
-body.light-theme .Container-Form {
-    background-image: url('img/body-red2.jpg');
-    /* Imagem para o tema claro */
-}
-
-
-
-body.dark-theme .Container-Form {
-    background-image: url('img/img-red2-removebg-preview.png');
-    /* Imagem para o tema escuro */
-}
-
-header,
-footer,
-nav {
-    background-color: var(--header-background);
-}
-
-a {
-    color: var(--link-color);
-}
-
-button {
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-}
-
-#theme-toggle {
-    border-radius: 50px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    margin: auto 20px;
-    font-size: 15px;
-}
 
 /* Estilização da imagem da logo */
 .Logo img {
@@ -200,6 +131,7 @@ button {
     top: 0;
     position: fixed;
     width: 100%;
+    background-color: #100e14;
 }
 
 .Nav-Bar {
@@ -232,6 +164,7 @@ button {
     letter-spacing: 2px;
     font-weight: 600;
     padding: 15px;
+    color: #ffffff;
 }
 
 .Inicio:hover,
@@ -278,6 +211,7 @@ button {
     font-size: 5em;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    color: #ffa500;
 
 }
 
@@ -286,6 +220,9 @@ button {
     font-weight: 600;
     margin-top: 10px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    color: #ffa500;
+
+
 }
 
 .Container-Principal button {
@@ -347,10 +284,16 @@ button {
     width: 60%;
     padding: 4px;
     margin-top: 8px;
+    background-color: #ffffff;
+    color: #141414;
 }
 
 .Jogos button:hover {
     cursor: pointer;
+    background-color: #141414;
+    color: #ffffff;
+
+
 
 
 }
@@ -419,6 +362,7 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: url('img/img-red2-removebg-preview.png');
 }
 
 /*
@@ -524,12 +468,14 @@ button {
     display: none;
     /* Inicialmente oculto */
     border-radius: 7px;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .Itens-Carrinho {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -672,8 +618,9 @@ button {
         align-items: center;
         margin-right: 100px;
     }
-    .Img-Principal img{
-    width: 390px;
+
+    .Img-Principal img {
+        width: 390px;
     }
 
     .Container-Principal h1 {
