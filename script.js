@@ -190,7 +190,7 @@ function adicionarCarrinho(event) {
     const info = button.parentElement;
     const imagem = info.getElementsByClassName('Imagem')[0].src;
     const titulo = info.getElementsByClassName('Titulo')[0].innerText;
-    const preco = info.getElementsByClassName('Adicionar-Carrinho')[0].innerText;
+    const preco = info.getElementsByClassName('Preco')[0].innerText;
 
     const novoPedido = document.createElement('div');
     novoPedido.classList.add('Pedido');
