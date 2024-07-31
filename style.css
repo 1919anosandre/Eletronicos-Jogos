@@ -225,51 +225,42 @@ main {
 
 }
 
-.Container-Principal button {
 
-    padding: 10px;
-    border-radius: 7px;
-    width: 100px;
-    border: 01px solid black;
-    margin-top: 4px;
 
-}
-
-.Container-Jogos-PS3 {
+.Container-Jogos-PS3 ,.Container-Jogos-PS4 , .Container-Jogos-PS5 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    /*height: 100vh;*/
     padding: 5px 5%;
 }
 
-.Container-Jogos-PS4 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    /* height: 100vh; */
-    padding: 5px 5%;
-}
 
 
 .Jogos {
     background-color: #23232e;
     width: 100%;
-    height: 170px;
+    height: 230px;
     max-width: 210px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 7px;
-    border: 01px solid rgb(5, 5, 5);
-    margin-top: 8px;
+    box-shadow: 2px 4px 4px rgb(12, 11, 11);
+    margin-top: 15px;
+}
+
+.Jogos h1{
+   text-align: center;
+   color: #ccc;
+   font-size: 1.1rem;
+   font-weight: 600;
+   letter-spacing: 1px;
 }
 
 .Jogos img {
-    height: 135px;
+    height: 175px;
     width: 100%;
     border-radius: 4px;
     object-fit: cover;
@@ -283,7 +274,7 @@ main {
     border-radius: 7px;
     width: 60%;
     padding: 4px;
-    margin-top: 8px;
+    margin-top: 5px;
     background-color: #ffffff;
     color: #141414;
 }
@@ -453,7 +444,7 @@ main {
 }
 
 .Container-Pedido {
-    display: flex;
+    display: none;
     overflow-y: auto;
     flex-direction: column;
     z-index: 2;
@@ -479,12 +470,14 @@ main {
 
 .Itens-Carrinho {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
-
-
+.Pedido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
 
 .Itens-Carrinho h1 {
     color: red;
@@ -639,6 +632,7 @@ main {
 
     .Container-Jogos-PS3,
     .Container-Jogos-PS4,
+    .Container-Jogos-PS5,
     .Container-Console,
     .Container-PC,
     .Container-Form {
@@ -668,7 +662,7 @@ main {
     }
 
     .Inputs-Form {
-        width: 60%;
+        width: 70%;
     }
 
     .Inputs-Form h1 {
@@ -676,7 +670,7 @@ main {
     }
 
     .Inputs-Form input {
-        width: 70%;
+        width: 80%;
     }
 
 
