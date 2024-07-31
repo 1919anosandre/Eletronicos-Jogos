@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Container_Principal.style.opacity = '0';
         Container_JogosPs4.style.display = 'none'
         Container_JogosPs3.style.display = 'flex'
+        Container_JogosPs5.style.display = 'none'
         Container_PC.style.display = 'none'
 
 
@@ -99,11 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
             JogosPS3.style.borderBottom = '4px solid yellow'
             Inicio.style.borderBottom = 'none'
             JogosPS4.style.borderBottom = 'none'
+            JogosPS5.style.borderBottom = 'none'
             PC.style.borderBottom = 'none'
             Consoles.style.borderBottom = 'none'
-
-
-
+            Container_JogosPs4.style.display = 'none'
+            Container_JogosPs5.style.display = 'none'
         });
 
         JogosPS4.addEventListener("click", () => {
@@ -111,7 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
             JogosPS4.style.borderBottom = '4px solid yellow'
             Container_JogosPs4.style.display = 'flex'
             Container_JogosPs3.style.display = 'none'
+            Container_JogosPs5.style.display = 'none'
             Inicio.style.borderBottom = 'none'
+            JogosPS3.style.borderBottom = 'none'
+            JogosPS5.style.borderBottom = 'none'
+            PC.style.borderBottom = 'none'
+            Consoles.style.borderBottom = 'none'
+        });
+
+        JogosPS5.addEventListener("click", () => {
+            Container_JogosPs5.scrollIntoView({ behavior: "smooth" });
+            JogosPS5.style.borderBottom = '4px solid yellow'
+            Container_JogosPs4.style.display = 'none'
+            Container_JogosPs3.style.display = 'none'
+            Container_JogosPs5.style.display = 'flex'
+            Inicio.style.borderBottom = 'none'
+            JogosPS4.style.borderBottom = 'none'
             JogosPS3.style.borderBottom = 'none'
             PC.style.borderBottom = 'none'
             Consoles.style.borderBottom = 'none'
@@ -125,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Inicio.style.borderBottom = 'none'
             JogosPS4.style.borderBottom = 'none'
             JogosPS3.style.borderBottom = 'none'
+            JogosPS5.style.borderBottom = 'none'
             PC.style.borderBottom = 'none'
         });
 
@@ -134,79 +151,96 @@ document.addEventListener('DOMContentLoaded', () => {
             Container_PC.style.display = 'flex'
             Container_Console.style.display = 'none'
             Inicio.style.borderBottom = 'none'
+            JogosPS3.style.borderBottom = 'none'
             JogosPS4.style.borderBottom = 'none'
+            JogosPS5.style.borderBottom = 'none'
             Consoles.style.borderBottom = 'none'
         });
 
     }
     exibir_Ocultar_Container()
 })
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ready);
+} else {
+    ready();
+}
 
-const quantidade_carrinho = document.querySelector('.Quantidade-Pedido-Carrinho')
-const the_last_of_us = document.querySelector('.pedir-the-last-of-us')
-const Container_Pedido = document.querySelector('.Container-Pedido')
-const Carrinho = document.querySelector('#Carrinho')
-const Quantidade_Input = document.querySelector('.Quantidade')
-const Preco = document.querySelector('.Preco')
-const Finalizar_Pedido = document.querySelector('#Finalizar-Pedido')
+let total = 0;
 
-let quantidadeCarrinho = 0;
-
-the_last_of_us.addEventListener('click', () => {
-    quantidadeCarrinho++;
-
-    quantidade_carrinho.textContent = quantidadeCarrinho
-
-})
-
-Carrinho.addEventListener('click', () => {
-
-    if (quantidadeCarrinho > 0) {
-        Container_Pedido.style.display = 'flex'
-    } else {
-        Container_Pedido.style.display = 'none'
-    }
-})
-
-let precoTotalCarrinho = 0;
-let precoBase = 50;
-
-
-const quantidade = parseInt(Quantidade_Input.value, 10) || 0;
-const verificar_preco = parseFloat(Preco) || 0;
-
-const precoTotal = precoBase * quantidade;
-precoTotalCarrinho += precoTotal;
-Preco.textContent = `R$ ${precoTotal.toFixed(2)}`;
-
-
-Finalizar_Pedido.textContent = `Finalizar Pedido R$ ${precoTotalCarrinho.toFixed(2)}`
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    // Função para alternar o tema
-    function toggleTheme() {
-        body.classList.toggle('dark-theme');
-        body.classList.toggle('light-theme');
-        const isDarkTheme = body.classList.contains('dark-theme');
-        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+function ready() {
+    const removerButtons = document.getElementsByClassName('Remover-Pedido');
+    for (let i = 0; i < removerButtons.length; i++) {
+        removerButtons[i].addEventListener('click', removeProduct);
     }
 
-    // Carregar o tema salvo
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-theme');
-    } else {
-        body.classList.add('light-theme');
+    const quantidadeInputs = document.getElementsByClassName('Quantidade');
+    for (let i = 0; i < quantidadeInputs.length; i++) {
+        quantidadeInputs[i].addEventListener('change', atualizarPreco);
     }
 
-    // Adicionar o evento de clique ao botão
-    toggleButton.addEventListener('click', toggleTheme);
-});
+    const adicionarCarrinhoButtons = document.getElementsByClassName('Adicionar-Carrinho');
+    for (let i = 0; i < adicionarCarrinhoButtons.length; i++) {
+        adicionarCarrinhoButtons[i].addEventListener('click', adicionarCarrinho);
+    }
+}
+
+function adicionarCarrinho(event) {
+    const button = event.target;
+    const info = button.parentElement;
+    const imagem = info.getElementsByClassName('Imagem')[0].src;
+    const titulo = info.getElementsByClassName('Titulo')[0].innerText;
+    const preco = info.getElementsByClassName('Adicionar-Carrinho')[0].innerText;
+
+    const novoPedido = document.createElement('div');
+    novoPedido.classList.add('Pedido');
+
+    novoPedido.innerHTML = `
+        <img src="${imagem}" alt="${titulo}">
+        <h1>${titulo}</h1>
+        <div class="Total-Container">
+            <span class="Preco">${preco}</span>
+            <input type="number" class="Quantidade" min="1" max="10" value="1">
+        </div>
+        <button class="Remover-Pedido">remover</button>
+        
+    `;
+    const containerPedido = document.querySelector('.Itens-Carrinho');
+    containerPedido.append(novoPedido);
+
+    // Adicionar evento para o botão de remover
+    novoPedido.getElementsByClassName('Remover-Pedido')[0].addEventListener('click', removeProduct);
+    // Adicionar evento para o input de quantidade
+    novoPedido.getElementsByClassName('Quantidade')[0].addEventListener('change', atualizarPreco);
+
+    atualizarPreco();
+
+    // Exibir o container de pedidos
+}
+
+function removeProduct(event) {
+    const button = event.target;
+    button.parentElement.remove();
+    atualizarPreco();
+}
+
+function atualizarPreco() {
+    let total = 0;
+    const pedidos = document.getElementsByClassName('Pedido');
+    for (let i = 0; i < pedidos.length; i++) {
+        const precoElement = pedidos[i].getElementsByClassName('Preco')[0];
+        const quantidadeElement = pedidos[i].getElementsByClassName('Quantidade')[0];
+        const preco = parseFloat(precoElement.innerText.replace('R$', '').replace(',', '.'));
+        const quantidade = quantidadeElement.value;
+
+        total += preco * quantidade;
+    }
+    total = total.toFixed(2).replace('.', ',');
+    document.querySelector('.Total-Container span').innerText = total;
+}
+
+document.querySelector('.Container-Pedido').style.display = 'flex';
+
 
 
 // script.js
@@ -214,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const slideshow = document.getElementById('slideshow');
     const images = [
-        'img/ellie-removebg-preview.png',
+        'img/joel_and_ellie_wallpaper_by_mrjuniorer_d8aa27v-fullview-removebg-preview.png',
         'img/far-cry-viloes-removebg-preview.png',
         'img/gta5.wallpaper-removebg-preview.png'
     ];
