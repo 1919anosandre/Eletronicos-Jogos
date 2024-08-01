@@ -166,24 +166,24 @@ if (document.readyState === 'loading') {
     ready();
 }
 
-let total = 0;
+let quantidadePedido = 0;
+const Quantidade_Pedido = document.querySelector('.Quantidade-Pedido-Carrinho');
 
 function ready() {
-    const removerButtons = document.getElementsByClassName('Remover-Pedido');
-    for (let i = 0; i < removerButtons.length; i++) {
-        removerButtons[i].addEventListener('click', removeProduct);
-    }
-
-    const quantidadeInputs = document.getElementsByClassName('Quantidade');
-    for (let i = 0; i < quantidadeInputs.length; i++) {
-        quantidadeInputs[i].addEventListener('change', atualizarPreco);
-    }
-
     const adicionarCarrinhoButtons = document.getElementsByClassName('Adicionar-Carrinho');
     for (let i = 0; i < adicionarCarrinhoButtons.length; i++) {
         adicionarCarrinhoButtons[i].addEventListener('click', adicionarCarrinho);
     }
 }
+
+const carrinhoButton = document.querySelector('.Carrinho');
+carrinhoButton.addEventListener('click', () => {
+    if (quantidadePedido > 0) {
+        document.querySelector('.Container-Pedido').style.display = 'block';
+    } else {
+        document.querySelector('.Container-Pedido').style.display = 'none';
+    }
+});
 
 function adicionarCarrinho(event) {
     const button = event.target;
@@ -203,7 +203,6 @@ function adicionarCarrinho(event) {
             <input type="number" class="Quantidade" min="1" max="10" value="1">
         </div>
         <button class="Remover-Pedido">remover</button>
-        
     `;
     const containerPedido = document.querySelector('.Itens-Carrinho');
     containerPedido.append(novoPedido);
@@ -213,14 +212,17 @@ function adicionarCarrinho(event) {
     // Adicionar evento para o input de quantidade
     novoPedido.getElementsByClassName('Quantidade')[0].addEventListener('change', atualizarPreco);
 
-    atualizarPreco();
+    quantidadePedido++;
+    Quantidade_Pedido.textContent = quantidadePedido;
 
-    // Exibir o container de pedidos
+    atualizarPreco();
 }
 
 function removeProduct(event) {
     const button = event.target;
     button.parentElement.remove();
+    quantidadePedido--;
+    Quantidade_Pedido.textContent = quantidadePedido;
     atualizarPreco();
 }
 
@@ -228,22 +230,16 @@ function atualizarPreco() {
     let total = 0;
     const pedidos = document.getElementsByClassName('Pedido');
     for (let i = 0; i < pedidos.length; i++) {
-        const precoElement = pedidos[i].getElementsByClassName('Preco')[0];
+        const precoElement = pedidos[i].getElementsByClassName('Preco')[0]; 
         const quantidadeElement = pedidos[i].getElementsByClassName('Quantidade')[0];
         const preco = parseFloat(precoElement.innerText.replace('R$', '').replace(',', '.'));
-        const quantidade = quantidadeElement.value;
+        const quantidade = parseInt(quantidadeElement.value, 10);
 
         total += preco * quantidade;
     }
     total = total.toFixed(2).replace('.', ',');
     document.querySelector('.Total-Container span').innerText = total;
 }
-
-document.querySelector('.Container-Pedido').style.display = 'flex';
-
-
-
-// script.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const slideshow = document.getElementById('slideshow');
