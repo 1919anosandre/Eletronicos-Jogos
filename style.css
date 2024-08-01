@@ -270,10 +270,16 @@ main {
 
 }
 
+.Jogos span{
+color: #ffffff;
+font-size: 0.9rem;
+font-weight: bold;
+}
+
 .Jogos button {
     border-radius: 7px;
     width: 60%;
-    padding: 4px;
+    padding: 3px;
     margin-top: 5px;
     background-color: #ffffff;
     color: #141414;
@@ -479,6 +485,7 @@ main {
     margin-bottom: 10px;
 }
 
+
 .Itens-Carrinho h1 {
     color: red;
     font-size: 1.1rem;
@@ -639,6 +646,7 @@ main {
         width: 100%;
     }
 
+  
     .Container-Console,
     .Container-PC {
         height: 100vh;
@@ -654,7 +662,7 @@ main {
 
     .Jogos {
         flex-direction: column;
-        width: 50%;
+        width: 60%;
     }
 
     .Container-Form {
