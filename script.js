@@ -225,12 +225,11 @@ function removeProduct(event) {
     Quantidade_Pedido.textContent = quantidadePedido;
     atualizarPreco();
 }
-
 function atualizarPreco() {
     let total = 0;
     const pedidos = document.getElementsByClassName('Pedido');
     for (let i = 0; i < pedidos.length; i++) {
-        const precoElement = pedidos[i].getElementsByClassName('Preco')[0]; 
+        const precoElement = pedidos[i].getElementsByClassName('Preco')[0];
         const quantidadeElement = pedidos[i].getElementsByClassName('Quantidade')[0];
         const preco = parseFloat(precoElement.innerText.replace('R$', '').replace(',', '.'));
         const quantidade = parseInt(quantidadeElement.value, 10);
@@ -256,4 +255,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setInterval(changeImage, 3000); // Muda a imagem a cada 3 segundos
+});
+let inputemail = document.querySelector('.email-input')
+
+function validacao() {
+    const nome = document.querySelector('.nome-input').value;
+    const email = document.querySelector('.email-input').value;
+
+    if (nome === '' || email === '') {
+        alert('Preencha todos os campos !!');
+        return false;
+    }
+    return validarEmail(document.querySelector('.email-input'));
+}
+
+function validarEmail(field) {
+    const usuario = field.value.substring(0, field.value.indexOf("@"));
+    const dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+
+    if ((usuario.length >= 1) &&
+        (dominio.length >= 3) &&
+        (usuario.search("@") === -1) &&
+        (dominio.search("@") === -1) &&
+        (usuario.search(" ") === -1) &&
+        (dominio.search(" ") === -1) &&
+        (dominio.search(".") !== -1) &&
+        (dominio.indexOf(".") >= 1) &&
+        (dominio.lastIndexOf(".") < dominio.length - 1)) {
+        document.querySelector(".msgemail").innerHTML = "E-mail válido";
+        inputemail.style.border = '02px solid green'
+
+        return true;
+    } else {
+        document.querySelector(".msgemail").innerHTML = "<font color='red'>E-mail inválido</font>";
+        alert("E-mail inválido");
+        inputemail.style.border = '02px solid red'
+        return false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.Container-Form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita o envio do formulário antes da validação
+        if (validacao()) {
+            // Se o formulário for válido, pode prosseguir com o envio
+            alert('Dados enviados com sucesso!');
+            this.submit();
+        }
+    });
 });
