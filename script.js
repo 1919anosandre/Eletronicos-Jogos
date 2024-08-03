@@ -189,8 +189,18 @@ function adicionarCarrinho(event) {
     const button = event.target;
     const info = button.parentElement;
     const imagem = info.getElementsByClassName('Imagem')[0].src;
-    const titulo = info.getElementsByClassName('Titulo')[0].innerText;
     const preco = info.getElementsByClassName('Preco')[0].innerText;
+    const titulo = info.getElementsByClassName('Titulo')[0].innerText;
+
+    const pedidos = document.getElementsByClassName('Pedido');
+    for (let i = 0; i < pedidos.length; i++) {
+        if (pedidos[i].querySelector('h1').innerText === titulo) {
+            const quantidadeElement = pedidos[i].getElementsByClassName('Quantidade')[0];
+            quantidadeElement.value = parseInt(quantidadeElement.value) + 1;
+            atualizarPreco();
+            return;
+        }
+    }
 
     const novoPedido = document.createElement('div');
     novoPedido.classList.add('Pedido');
@@ -202,7 +212,7 @@ function adicionarCarrinho(event) {
             <span class="Preco">${preco}</span>
             <input type="number" class="Quantidade" min="1" max="10" value="1">
         </div>
-        <button class="Remover-Pedido">remover</button>
+        <button class="Remover-Pedido">Remover</button>
     `;
     const containerPedido = document.querySelector('.Itens-Carrinho');
     containerPedido.append(novoPedido);
@@ -225,6 +235,7 @@ function removeProduct(event) {
     Quantidade_Pedido.textContent = quantidadePedido;
     atualizarPreco();
 }
+
 function atualizarPreco() {
     let total = 0;
     const pedidos = document.getElementsByClassName('Pedido');
@@ -237,8 +248,9 @@ function atualizarPreco() {
         total += preco * quantidade;
     }
     total = total.toFixed(2).replace('.', ',');
-    document.querySelector('.Total-Container span').innerText = total;
+    document.querySelector('.Total-Container span').innerText = 'R$ ' + total;
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const slideshow = document.getElementById('slideshow');
