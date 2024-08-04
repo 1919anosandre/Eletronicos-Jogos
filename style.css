@@ -701,6 +701,9 @@ i span {
     .Container-Console img {
         width: 70%;
     }
+      i{
+    flex-direction: column;
+    }
 
     i h1 {
         font-size: 0.9rem;
