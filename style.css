@@ -586,6 +586,11 @@ font-weight: bold;
         opacity: 0;
         font-size: 1.6rem;
     }
+    .Nav-Bar li.active {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
 
     .mobile-menu {
         display: block;
