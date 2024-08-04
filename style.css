@@ -426,23 +426,51 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     background: rgb(14, 13, 13);
+    flex-direction: column;
 }
+.Container-Footer p{
+color: #ffffff;
+font-size: 1.1rem;
+font-weight: 700;
+margin-top: 10px;
+text-shadow: 2px 2px 4px rgb(0, 0, 0);
 
-.Container-Footer h1 {
-    font-size: 1.4rem;
+}
+i{
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-top: 8px;
+}
+i h1 {
+    font-size: 1.3rem;
     color: rgb(255, 215, 0);
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
 
 }
+.Redes{
+display: flex;
+justify-content: space-around;
+}
+.Redes img{
+height: 30px;
+width: 100%;
+max-width: 60px;
+margin: 0 5px;
 
-.Container-Footer svg {
+}
+.Redes img:hover{
+cursor: pointer;
+}
+
+i svg {
     margin-left: 15px;
     color: rgb(255, 215, 0);
 }
 
-.Container-Footer span {
+i span {
     margin-left: 15px;
     color: rgb(255, 215, 0);
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -569,7 +597,7 @@ font-weight: bold;
 
     .Nav-Bar {
         top: 8vh;
-        width: 100%;
+        width: 70%;
         height: 45vh;
         display: flex;
         /* Make it a flex container */
@@ -596,6 +624,7 @@ font-weight: bold;
         display: block;
 
     }
+
     .Container-Principal {
         width: 100%;
         flex-direction: column;
@@ -673,16 +702,17 @@ font-weight: bold;
         width: 70%;
     }
 
-    .Container-Footer h1 {
-        font-size: 18px;
+    i h1 {
+        font-size: 0.9rem;
     }
 
-    .Container-Footer span {
-        font-size: 18px;
+    i span {
+        font-size: 0.9rem;
     }
 }
-    .Nav-Bar.active {
-        transform: translateX(0);
-        background: #23232e;
-    }
+.Nav-Bar.active {
+    transform: translateX(0);
+    background: #23232e;
+}
+
 
