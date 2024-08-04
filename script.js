@@ -1,4 +1,3 @@
-
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
         this.mobileMenu = document.querySelector(mobileMenu);
@@ -18,8 +17,11 @@ class MobileNavbar {
     }
 
     handleClick() {
-        this.navList.classList.toggle(this.activeClass); // Corrigido de NavBar para navList
+        this.navList.classList.toggle(this.activeClass);
         this.mobileMenu.classList.toggle(this.activeClass);
+        this.navLinks.forEach(link => {
+            link.classList.toggle(this.activeClass);
+        });
         this.animateLinks();
     }
 
@@ -30,10 +32,7 @@ class MobileNavbar {
     }
 
     init() {
-        // Verifica se a página foi completamente carregada antes de adicionar o evento de clique
-        document.addEventListener("DOMContentLoaded", () => {
-            this.addClickEvent();
-        });
+        this.addClickEvent();
         return this;
     }
 }
@@ -44,6 +43,7 @@ const mobileNavbar = new MobileNavbar(
     ".Nav-Bar li",
 );
 mobileNavbar.init();
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
