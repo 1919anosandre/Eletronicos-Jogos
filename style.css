@@ -596,16 +596,6 @@ font-weight: bold;
         display: block;
 
     }
-
-    .Nav-Bar.active {
-        transform: translateX(0);
-        background: #23232e;
-    }
-
-
-
-
-
     .Container-Principal {
         width: 100%;
         flex-direction: column;
@@ -691,3 +681,8 @@ font-weight: bold;
         font-size: 18px;
     }
 }
+    .Nav-Bar.active {
+        transform: translateX(0);
+        background: #23232e;
+    }
+
