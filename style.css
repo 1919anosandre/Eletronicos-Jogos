@@ -6,7 +6,8 @@
     border: none;
     font-family: 'Nunito Sans', sans-serif;
     user-select: none;
-    outline:none;
+    outline: none;
+
 }
 
 body {
@@ -322,7 +323,7 @@ main {
 .Console,
 .PC {
     max-width: 250px;
-    height: 200px;
+    height: 250px;
     width: 100%;
     box-shadow: 2px 4px 4px rgb(12, 11, 11);
     border-radius: 7px;
@@ -331,19 +332,15 @@ main {
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    background-color: #23232e;
+    background-color: #ffffff;
 
 }
 
-.Console:hover,
-.PC:hover {
-    transform: scale(1.02);
-    transition: 1s;
-}
+
 
 .Console img,
 .PC img {
-    height: auto;
+    height: 160px;
     width: 160px;
 }
 
@@ -354,8 +351,8 @@ main {
     width: 60%;
     padding: 10px;
     margin-top: 15px;
-    background-color: #ffffff;
-    color: #141414;
+    background-color: #23232e;
+    color: #ffffff;
 }
 
 .Console button:hover,
@@ -402,11 +399,6 @@ main {
     border-radius: 7px;
 }
 
-
-
-
-
-
 .Inputs-Form input {
     background-color: rgba(255, 255, 255);
     color: #000000;
@@ -434,7 +426,6 @@ main {
     background-color: rgb(0, 0, 0);
     color: rgb(46, 255, 81);
     background-color: #1f1e1e;
-
 }
 
 .Container-Footer {
