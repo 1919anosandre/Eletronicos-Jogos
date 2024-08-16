@@ -6,7 +6,7 @@
     border: none;
     font-family: 'Nunito Sans', sans-serif;
     user-select: none;
-
+    outline:none;
 }
 
 body {
