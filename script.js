@@ -315,4 +315,40 @@ document.addEventListener('DOMContentLoaded', function () {
             this.submit();
         }
     });
+    
 });
+
+function horarios_funcionamento(){
+const funcionamento = document.querySelector('.Funcionamento')
+const horario = new Date()
+const hora_funcionamento = horario.getHours()
+const dia = new Date()
+const dia_funcionamento = dia.getDay()
+
+if(dia_funcionamento == 0 && dia_funcionamento == 6){
+alert('o estabelecimento está fechado. abre de seg á sex 08:00 ás 18:00!')
+}
+
+if(hora_funcionamento >= 8 && hora_funcionamento <= 18){
+funcionamento.innerText = 'Aberto'
+funcionamento.style.color = 'green'
+}else{
+funcionamento.innerText = 'fechado'
+funcionamento.style.color = 'red'
+}
+
+}
+horarios_funcionamento()
+
+
+const observar = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show')
+        } else {
+            entry.target.classList.remove('show')
+        }
+    })
+})
+const elements = document.querySelectorAll('.hidden')
+elements.forEach((elements) => observar.observe(elements))
