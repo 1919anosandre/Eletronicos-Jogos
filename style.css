@@ -132,6 +132,7 @@ main {
     position: fixed;
     width: 100%;
     background-color: #100e14;
+    z-index: 1;
 }
 
 .Nav-Bar {
@@ -313,17 +314,31 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 400px;
     width: 100%;
-
+    flex-wrap: wrap;
+height: 100vh;
 }
 
+
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 2s;
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s;
+}
 
 
 .Console,
 .PC {
-    max-width: 250px;
-    height: 250px;
+    max-width: 210px;
+    height: 210px;
     width: 100%;
     box-shadow: 2px 4px 4px rgb(12, 11, 11);
     border-radius: 7px;
@@ -333,7 +348,9 @@ main {
     flex-direction: column;
     padding: 10px;
     background-color: #ffffff;
-
+    margin-top: 10px;
+margin: 0 5px;
+padding-block-end: 5px;
 }
 
 
@@ -799,4 +816,76 @@ i span {
 .Nav-Bar.active {
     transform: translateX(0);
     background: #23232e;
+}
+
+.Jogos :nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.Jogos :nth-child(3) {
+    transition-delay: 500ms;
+}
+
+.Jogos :nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.Jogos :nth-child(5) {
+    transition-delay: 700ms;
+}
+
+.Jogos :nth-child(6) {
+    transition-delay: 800ms;
+}
+
+.Jogos :nth-child(7) {
+    transition-delay: 900ms;
+}
+
+.Jogos :nth-child(8) {
+    transition-delay: 1000ms;
+}
+
+.Jogos :nth-child(9) {
+    transition-delay: 1100ms;
+}
+
+.Jogos :nth-child(10) {
+    transition-delay: 1200ms;
+}
+
+.Jogos :nth-child(11) {
+    transition-delay: 1300ms;
+}
+
+.Jogos :nth-child(12) {
+    transition-delay: 1400ms;
+}
+
+.Jogos :nth-child(13) {
+    transition-delay: 1500ms;
+}
+
+.Jogos :nth-child(14) {
+    transition-delay: 1600ms;
+}
+
+.Jogos :nth-child(15) {
+    transition-delay: 1700ms;
+}
+
+.Jogos :nth-child(16) {
+    transition-delay: 1800ms;
+}
+
+.Jogos :nth-child(17) {
+    transition-delay: 1900ms;
+}
+
+.Jogos :nth-child(18) {
+    transition-delay: 400ms;
+}
+
+.Jogos :nth-child(19) {
+    transition-delay: 400ms;
 }
