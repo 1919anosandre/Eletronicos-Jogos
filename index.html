@@ -28,11 +28,24 @@
                 </li>
 
                 <li class="Inicio">inicio</li>
-                <li class="Jogos-PS3">Jogos ps3</li>
-                <li class="Jogos-PS4">jogos ps4</li>
-                <li class="Jogos-PS5">jogos ps5</li>
-                <li class="Console-li">console</li>
-                <li class="PC-Gamer">pc gamer</li>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Jogos</button>
+                    <div class="dropdown-content">
+                        <li class="Jogos-PS3">Jogos ps3</li>
+                        <li class="Jogos-PS4">jogos ps4</li>
+                        <li class="Jogos-PS5">jogos ps5</li>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">hardwares</button>
+                    <div class="dropdown-content">
+                        <li class="Console-li">console</li>
+                        <li class="PC-Gamer">acessórios pc</li>
+                        <li class="outro">acessórios console</li>
+                    </div>
+                </div>
                 <li class="Carrinho">
                     <span class="Quantidade-Pedido-Carrinho">0</span>
                     <img src="img/carrinho.webp" alt="carrinho">
@@ -44,7 +57,9 @@
         </nav>
     </header>
 
+
     <div class="Container-Pedido">
+        <div class="fechar-carrinho"><img src="img/fechar-img.png.crdownload" alt="fechar"></div>
         <div class="Itens-Carrinho">
 
             <div class="Total-Container">
@@ -67,6 +82,8 @@
             </div>
         </section>
     </main>
+
+
 
     <section class="Container-Jogos-PS3">
         <div class=" hidden Jogos">
@@ -460,16 +477,22 @@
 
         <div class=" hidden Console">
             <img src="img/ps3.png" alt="">
+            <h1 class="Titulo">playstation 3</h1>
+            <span class="Preco">R$ 1100,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
         <div class=" hidden Console">
             <img src="img/ps4.png" alt="">
+            <h1 class="Titulo">playstation 4</h1>
+            <span class="Preco">R$ 1700,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
         <div class=" hidden Console">
             <img src="img/ps5-removebg-preview (1).png" alt="">
+            <h1 class="Titulo">playstation 5</h1>
+            <span class="Preco">R$ 3000,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
@@ -491,6 +514,7 @@
         </div>
 
         <div class=" hidden PC">
+            <h1>gabinete gamer</h1>
             <img src="img-eletronicos/PC-Gamer-06.jpg" alt="">
             <button>R$3200,00</button>
 
@@ -504,43 +528,81 @@
 
 
         <div class=" hidden PC">
-            <img src="img-eletronicos/Gamer-PC.jpg" alt="">
+            <h1>monitor dell 19 polegadas</h1>
+            <img src="img-eletronicos/monitor 19polegadas dell.jpg" alt="">
             <button>R$3200,00</button>
 
         </div>
 
 
         <div class=" hidden PC">
-            <img src="img-eletronicos/Gamer-PC.jpg" alt="">
+            <h1>monitor gamer acer 34h</h1>
+            <img src="img-eletronicos/monitor-gamer-acer.jpg" alt="">
             <button>R$3200,00</button>
 
         </div>
 
 
         <div class=" hidden PC">
-            <img src="img-eletronicos/Gamer-PC.jpg" alt="">
+            <h1>controle ps5</h1>
+            <img src="img-eletronicos/kit-gamer-haiz-teclado-mouse-fone-headset-51-led-hz26-D_NQ_NP_931181-MLB31079982560_062019-O.jpg"
+                alt="">
             <button>R$3200,00</button>
 
         </div>
 
 
         <div class=" hidden PC">
-            <img src="img-eletronicos/Gamer-PC.jpg" alt="">
+            <h1>monitor gamer asus 27</h1>
+            <img src="img-eletronicos/monitor-gamer-asus.jpg" alt="">
             <button>R$3200,00</button>
 
         </div>
 
 
         <div class=" hidden PC">
-            <img src="img-eletronicos/Gamer-PC.jpg" alt="">
-            <button>R$3200,00</button>
+            <h1>cabo usb tipo C 2 metros</h1>
+            <img src="img-eletronicos/cabo-usb.webp" alt="">
+            <span class="preco">R$ 19,00</span>
+            <button>pedir já</button>
 
         </div>
 
 
         <div class=" hidden PC">
-            <img src="img-eletronicos/Gamer-PC.jpg" alt="">
-            <button>R$3200,00</button>
+            <h1>cadeira gamer</h1>
+            <img src="img-eletronicos/cadeira-gamer.webp" alt="">
+            <div class="promocao">
+                <span class="preco"> <del>R$ 320,00</del></span>
+                <span class="preco-promocao">R$ 310,00</span>
+
+            </div>
+            <button>pedir já</button>
+
+        </div>
+
+        <div class=" hidden PC">
+            <h1>monitor gamer acer 34p</h1>
+            <img src="img-eletronicos/monitor-gamer-acer.jpg" alt="">
+            <div class="promocao">
+                <span class="preco"> <del>R$ 600,00</del></span>
+                <span class="preco-promocao">R$ 590,00</span>
+
+            </div>
+            <button>pedir já</button>
+
+        </div>
+
+        <div class=" hidden PC">
+            <h1>teclado + mousse + fone </h1>
+            <img src="img-eletronicos/kit-gamer-haiz-teclado-mouse-fone-headset-51-led-hz26-D_NQ_NP_931181-MLB31079982560_062019-O.jpg"
+                alt="">
+            <div class="promocao">
+                <span class="preco"> <del>R$ 109,00</del></span>
+                <span class="preco-promocao">R$ 99,00</span>
+
+            </div>
+            <button>pedir já</button>
 
         </div>
 
@@ -549,7 +611,41 @@
 
     </section>
 
+    <section class="Container-Acessorios-console">
 
+        <div class=" hidden card-acessorios">
+            <h1>controle ps3</h1>
+            <div class="gallery">
+                <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="img-eletronicos/controle-black-ps3.png" alt="Imagem" />
+                <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <span class="preco">R$ 30,00</span>
+            <button class="detalhes-acessorios">pedir já</button>
+
+        </div>
+
+        <div class=" hidden card-acessorios">
+            <h1>controle ps4</h1>
+            <div class="gallery">
+                <button class="arrow left" onclick="changeImage2(-1)">&#10094;</button>
+                <img id="mainImage2" src="img-eletronicos/controle-black-ps4.webp" alt="Imagem" />
+                <button class="arrow right" onclick="changeImage2(1)">&#10095;</button>
+            </div>
+            <span class="preco">R$ 80,00</span>
+            <button class="detalhes-acessorios">pedir já</button>
+        </div>
+        <div class=" hidden card-acessorios">
+            <h1>controle ps5</h1>
+            <div class="gallery">
+                <button class="arrow left" onclick="changeImage3(-1)">&#10094;</button>
+                <img id="mainImage3" src="img-eletronicos/controle-ps5-white.jpg" alt="Imagem" />
+                <button class="arrow right" onclick="changeImage3(1)">&#10095;</button>
+            </div>
+            <span class="preco">R$ 130,00</span>
+            <button class="detalhes-acessorios">pedir já</button>
+        </div>
+    </section>
     <section class="Container-Form">
         <form class=" hidden Inputs-Form" method="post">
 
@@ -569,9 +665,20 @@
         <div class=" hidden Alinhamento-img-texto">
             <div class=" hidden Itens-Sobre-Texto">
                 <h1>Sobre</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laudantium cupiditate fugiat
-                    architecto quas quisquam qui earum. Excepturi, cupiditate? Perspiciatis facilis voluptatum qui a,
-                    quaerat tempora incidunt vero assumenda placeat?</p>
+                <p>Os "station games" são experiências interativas que combinam jogos digitais com elementos físicos,
+                    criando uma fusão emocionante de tecnologia e diversão. Esses jogos muitas vezes envolvem estações
+                    de jogo montadas em locais públicos, como praças ou centros comerciais, onde os jogadores podem
+                    participar de competições, desafios e aventuras em grupo.
+
+                    Cada estação oferece uma variedade de jogos, que podem incluir desde experiências de realidade
+                    virtual até jogos de tabuleiro interativos. Os participantes podem competir entre si ou colaborar em
+                    equipe para alcançar objetivos, promovendo não apenas o entretenimento, mas também a socialização e
+                    a atividade física.
+
+                    Com uma variedade de temas e mecânicas, os "station games" atraem jogadores de todas as idades,
+                    estimulando a criatividade e o trabalho em equipe. Essa tendência crescente reflete o desejo de
+                    interações mais dinâmicas e envolventes no mundo dos jogos, tornando a experiência mais acessível e
+                    divertida para todos.</p>
             </div>
             <img src="img-eletronicos/pexels-photo-7047326.jpeg" alt="">
         </div>
