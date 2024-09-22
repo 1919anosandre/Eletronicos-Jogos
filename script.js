@@ -46,31 +46,33 @@ mobileNavbar.init();
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
     function exibir_Ocultar_Container() {
-        //Containers
-        const Container_Principal = document.querySelector('.Container-Principal')
-        const Container_JogosPs3 = document.querySelector('.Container-Jogos-PS3')
-        const Container_JogosPs4 = document.querySelector('.Container-Jogos-PS4')
-        const Container_JogosPs5 = document.querySelector('.Container-Jogos-PS5')
-        const Container_Console = document.querySelector('.Container-Console')
-        const Container_PC = document.querySelector('.Container-PC')
-        //Li
-        const Inicio = document.querySelector('.Inicio')
-        const JogosPS3 = document.querySelector('.Jogos-PS3')
-        const JogosPS4 = document.querySelector('.Jogos-PS4')
-        const JogosPS5 = document.querySelector('.Jogos-PS5')
-        const Consoles = document.querySelector('.Console-li')
-        const PC = document.querySelector('.PC-Gamer')
+        // Containers
+        const Container_Principal = document.querySelector('.Container-Principal');
+        const Container_JogosPs3 = document.querySelector('.Container-Jogos-PS3');
+        const Container_JogosPs4 = document.querySelector('.Container-Jogos-PS4');
+        const Container_JogosPs5 = document.querySelector('.Container-Jogos-PS5');
+        const Container_Console = document.querySelector('.Container-Console');
+        const Container_PC = document.querySelector('.Container-PC');
 
+        // Li
+        const Inicio = document.querySelector('.Inicio');
+        const JogosPS3 = document.querySelector('.Jogos-PS3');
+        const JogosPS4 = document.querySelector('.Jogos-PS4');
+        const JogosPS5 = document.querySelector('.Jogos-PS5');
+        const Consoles = document.querySelector('.Console-li');
+        const PC = document.querySelector('.PC-Gamer');
+
+        // Inicializar
         Container_Principal.style.opacity = '0';
-        Container_JogosPs4.style.display = 'none'
-        Container_JogosPs3.style.display = 'flex'
-        Container_JogosPs5.style.display = 'none'
-        Container_PC.style.display = 'none'
+        Container_JogosPs4.style.display = 'none';
+        Container_JogosPs3.style.display = 'flex';
+        Container_JogosPs5.style.display = 'none';
+        Container_PC.style.display = 'flex';
 
 
 
+        // Fade in para Container_Principal
         setTimeout(() => {
             let opacity = 0;
             const interval = setInterval(() => {
@@ -81,85 +83,60 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearInterval(interval);
                 }
             }, 100); // Ajuste o tempo para suavidade desejada
-        }, 1000); // Tempo de espera inicial de 3 segundos
+        }, 1000); // Tempo de espera inicial de 1 segundo
+
+        // Função para atualizar o estilo dos botões e containers
+        function atualizarEstilos(seletoresAtivos) {
+            const { ativo, visiveis, ocultos } = seletoresAtivos;
+
+            // Atualiza o borderBottom
+            [Inicio, JogosPS3, JogosPS4, JogosPS5, Consoles, PC].forEach(item => {
+                item.style.borderBottom = item === ativo ? '4px solid yellow' : 'none';
+            });
+
+            // Atualiza a exibição dos containers
+            [Container_Principal, Container_JogosPs3, Container_JogosPs4, Container_JogosPs5, Container_Console, Container_PC].forEach(container => {
+                container.style.display = visiveis.includes(container) ? 'flex' : 'none';
+            });
 
 
+        }
 
+        // Adiciona os listeners de evento
         Inicio.addEventListener("click", () => {
             Container_Principal.scrollIntoView({ behavior: "smooth" });
-            Inicio.style.borderBottom = '4px solid yellow'
-            JogosPS3.style.borderBottom = 'none'
-            JogosPS4.style.borderBottom = 'none'
-            PC.style.borderBottom = 'none'
-            Consoles.style.borderBottom = 'none'
+            atualizarEstilos({ ativo: Inicio, visiveis: [Container_Principal], ocultos: [] });
         });
 
         JogosPS3.addEventListener("click", () => {
             Container_JogosPs3.scrollIntoView({ behavior: "smooth" });
-            Container_JogosPs3.style.display = 'flex'
-            JogosPS3.style.borderBottom = '4px solid yellow'
-            Inicio.style.borderBottom = 'none'
-            JogosPS4.style.borderBottom = 'none'
-            JogosPS5.style.borderBottom = 'none'
-            PC.style.borderBottom = 'none'
-            Consoles.style.borderBottom = 'none'
-            Container_JogosPs4.style.display = 'none'
-            Container_JogosPs5.style.display = 'none'
+            atualizarEstilos({ ativo: JogosPS3, visiveis: [Container_JogosPs3], ocultos: [Container_JogosPs4, Container_JogosPs5, Container_PC, Container_Console] });
         });
 
         JogosPS4.addEventListener("click", () => {
             Container_JogosPs4.scrollIntoView({ behavior: "smooth" });
-            JogosPS4.style.borderBottom = '4px solid yellow'
-            Container_JogosPs4.style.display = 'flex'
-            Container_JogosPs3.style.display = 'none'
-            Container_JogosPs5.style.display = 'none'
-            Inicio.style.borderBottom = 'none'
-            JogosPS3.style.borderBottom = 'none'
-            JogosPS5.style.borderBottom = 'none'
-            PC.style.borderBottom = 'none'
-            Consoles.style.borderBottom = 'none'
+            atualizarEstilos({ ativo: JogosPS4, visiveis: [Container_JogosPs4], ocultos: [Container_JogosPs3, Container_JogosPs5, Container_PC, Container_Console] });
         });
 
         JogosPS5.addEventListener("click", () => {
             Container_JogosPs5.scrollIntoView({ behavior: "smooth" });
-            JogosPS5.style.borderBottom = '4px solid yellow'
-            Container_JogosPs4.style.display = 'none'
-            Container_JogosPs3.style.display = 'none'
-            Container_JogosPs5.style.display = 'flex'
-            Inicio.style.borderBottom = 'none'
-            JogosPS4.style.borderBottom = 'none'
-            JogosPS3.style.borderBottom = 'none'
-            PC.style.borderBottom = 'none'
-            Consoles.style.borderBottom = 'none'
+            atualizarEstilos({ ativo: JogosPS5, visiveis: [Container_JogosPs5], ocultos: [Container_JogosPs3, Container_JogosPs4, Container_PC, Container_Console] });
         });
 
         Consoles.addEventListener("click", () => {
             Container_Console.scrollIntoView({ behavior: "smooth" });
-            Consoles.style.borderBottom = '4px solid yellow'
-            Container_Console.style.display = 'flex'
-            Container_PC.style.display = 'none'
-            Inicio.style.borderBottom = 'none'
-            JogosPS4.style.borderBottom = 'none'
-            JogosPS3.style.borderBottom = 'none'
-            JogosPS5.style.borderBottom = 'none'
-            PC.style.borderBottom = 'none'
+            atualizarEstilos({ ativo: Consoles, visiveis: [Container_Console], ocultos: [Container_JogosPs3, Container_JogosPs4, Container_JogosPs5, Container_PC] });
         });
 
         PC.addEventListener("click", () => {
             Container_PC.scrollIntoView({ behavior: "smooth" });
-            PC.style.borderBottom = '4px solid yellow'
-            Container_PC.style.display = 'flex'
-            Container_Console.style.display = 'none'
-            Inicio.style.borderBottom = 'none'
-            JogosPS3.style.borderBottom = 'none'
-            JogosPS4.style.borderBottom = 'none'
-            JogosPS5.style.borderBottom = 'none'
-            Consoles.style.borderBottom = 'none'
+            atualizarEstilos({ ativo: PC, visiveis: [Container_PC], ocultos: [Container_JogosPs3, Container_JogosPs4, Container_JogosPs5, Container_Console] });
         });
-
     }
-    exibir_Ocultar_Container()
-})
+
+    exibir_Ocultar_Container();
+});
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -184,6 +161,13 @@ carrinhoButton.addEventListener('click', () => {
         document.querySelector('.Container-Pedido').style.display = 'none';
     }
 });
+const fechar = document.querySelector('.fechar-carrinho')
+
+function fechar_carrinho() {
+    carrinhoButton.style.display = 'none'
+}
+
+fechar.addEventListener('click', fechar_carrinho)
 
 function adicionarCarrinho(event) {
     const button = event.target;
@@ -315,27 +299,27 @@ document.addEventListener('DOMContentLoaded', function () {
             this.submit();
         }
     });
-    
+
 });
 
-function horarios_funcionamento(){
-const funcionamento = document.querySelector('.Funcionamento')
-const horario = new Date()
-const hora_funcionamento = horario.getHours()
-const dia = new Date()
-const dia_funcionamento = dia.getDay()
+function horarios_funcionamento() {
+    const funcionamento = document.querySelector('.Funcionamento')
+    const horario = new Date()
+    const hora_funcionamento = horario.getHours()
+    const dia = new Date()
+    const dia_funcionamento = dia.getDay()
 
-if(dia_funcionamento == 0 && dia_funcionamento == 6){
-alert('o estabelecimento está fechado. abre de seg á sex 08:00 ás 18:00!')
-}
+    if (dia_funcionamento == 0 && dia_funcionamento == 6) {
+        alert('o estabelecimento está fechado. abre de seg á sex 08:00 ás 18:00!')
+    }
 
-if(hora_funcionamento >= 8 && hora_funcionamento <= 18){
-funcionamento.innerText = 'Aberto'
-funcionamento.style.color = 'green'
-}else{
-funcionamento.innerText = 'fechado'
-funcionamento.style.color = 'red'
-}
+    if (hora_funcionamento >= 8 && hora_funcionamento <= 18) {
+        funcionamento.innerText = 'Aberto'
+        funcionamento.style.color = 'green'
+    } else {
+        funcionamento.innerText = 'fechado'
+        funcionamento.style.color = 'red'
+    }
 
 }
 horarios_funcionamento()
@@ -352,3 +336,76 @@ const observar = new IntersectionObserver((entries) => {
 })
 const elements = document.querySelectorAll('.hidden')
 elements.forEach((elements) => observar.observe(elements))
+
+// oque mais fazer   achar um dia no mes especifico para promoçoes e exibir um alert no dia da promoçao   e qnd chegar a promocao dar um desconto para o preco de todos os produtos igualmente
+
+// galeria img acessorios
+let images = [
+    'img-eletronicos/controle-black-ps3.png',
+    'img-eletronicos/controle-prata-ps3.webp',
+];
+
+let currentIndex = 0;
+
+function changeImage(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+
+    if (images == [1]) {
+        preco.textContent = 'R$ 40,00'
+    }
+
+    document.getElementById('mainImage').src = images[currentIndex];
+}
+
+let images2 = [
+    'img-eletronicos/controle-black-ps4.webp',
+    'img-eletronicos/controle-white-ps4.webp',
+    'img-eletronicos/controle-ps4-azul.webp'
+]
+
+let currentIndex2 = 0
+
+function changeImage2(direction) {
+    currentIndex2 += direction;
+
+    if (currentIndex2 < 0) {
+        currentIndex2 = images2.length - 1;
+    } else if (currentIndex2 >= images2.length) {
+        currentIndex2 = 0;
+    }
+
+    if (images == [1]) {
+        preco.textContent = 'R$ 40,00'
+    }
+
+    document.getElementById('mainImage2').src = images2[currentIndex2];
+}
+
+
+let images3 = [
+    'img-eletronicos/controle-ps5-white.jpg',
+    'img-eletronicos/controle-ps5-black.png',
+    'img-eletronicos/controle-ps5-rosa.png'
+]
+
+let currentIndex3 = 0
+
+function changeImage3(direction) {
+    currentIndex3 += direction;
+
+    if (currentIndex3 < 0) {
+        currentIndex3 = images3.length - 1;
+    } else if (currentIndex3 >= images3.length) {
+        currentIndex3 = 0;
+    }
+
+
+
+    document.getElementById('mainImage3').src = images3[currentIndex3];
+}
