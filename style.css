@@ -72,12 +72,68 @@ main {
     font-weight: 700;
 
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropbtn {
+    background-color: #100e14;
+    color: white;
+    padding: 10px;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0 12px;
+}
+
+.dropdown-content {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    background-color: #100e14;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.3rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostra o dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 .mobile-menu {
     display: none;
     cursor: pointer;
 }
 
+.container-sextou{
+display: none;
+justify-content: center;
+align-items: center;
+margin: 100px auto 0;
+position:fixed
+}
+
+.container-sextou img{
+width: 50%;
+height: auto;
+}
 
 .mobile-menu .line1,
 .line2,
@@ -133,11 +189,13 @@ main {
     width: 100%;
     background-color: #100e14;
     z-index: 1;
+    left: 0;
 }
 
 .Nav-Bar {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
 }
 
@@ -279,18 +337,25 @@ main {
     width: 100%;
     border-radius: 4px;
     object-fit: cover;
-    /* Garante que a imagem ocupe a área designada sem distorção */
     margin-top: 0;
-    /* Garante que a imagem esteja no topo */
 
 }
 
-.Jogos span {
+ span {
     color: rgba(238, 0, 0, 0.973);
     font-size: 0.9rem;
     font-weight: bold;
 }
 
+.promocao{
+display: flex;
+justify-content: center;
+}
+
+.preco-promocao{
+font-size: 1.3rem;
+margin-left: 10px;
+}
 .Jogos button {
     border-radius: 10px;
     width: 80%;
@@ -310,13 +375,14 @@ main {
 }
 
 .Container-Console,
-.Container-PC {
+.Container-PC , .Container-Acessorios-console {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-height: 100vh;
+   padding: 5px;
+
 }
 
 
@@ -336,9 +402,9 @@ height: 100vh;
 
 
 .Console,
-.PC {
-    max-width: 210px;
-    height: 210px;
+.PC , .card-acessorios {
+    max-width: 280px;
+    height: 280px;
     width: 100%;
     box-shadow: 2px 4px 4px rgb(12, 11, 11);
     border-radius: 7px;
@@ -346,28 +412,52 @@ height: 100vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px;
     background-color: #ffffff;
-    margin-top: 10px;
-margin: 0 5px;
+    margin-top: 6px;
+margin: 0 5px 10px 10px;
 padding-block-end: 5px;
+padding: 5px;
+
 }
 
 
+.gallery {
+    position: relative;
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+.left {
+    left: -80px;
+}
+
+.right {
+    right: -80px;
+}
 
 .Console img,
-.PC img {
+.PC img  , .card-acessorios img{
     height: 160px;
     width: 160px;
 }
 
 .Console button,
-.PC button {
+.PC button , .card-acessorios button {
 
     border-radius: 7px;
     width: 60%;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 5px;
     background-color: #23232e;
     color: #ffffff;
 }
@@ -528,6 +618,16 @@ i span {
     font-size: 1.1rem;
 }
 
+.fechar-carrinho img{
+height: 20px;
+width: 20px;
+}
+
+.fechar-carrinho{
+display: flex;
+top: 0;
+align-items: end;
+}
 .Container-Pedido {
     display: none;
     overflow-y: auto;
@@ -752,15 +852,14 @@ i span {
     }
 
 
-    .Container-Console,
-    .Container-PC {
-        height: 100vh;
+    .Container-Acessorios-console,
+    .Container-PC , .Container-Console  {
         flex-direction: column;
     }
 
 
     .Console,
-    .PC {
+    .PC , .card-acessorios {
         width: 70%;
         margin-top: 6px;
     }
@@ -788,10 +887,13 @@ i span {
 
     .Container-Sobre {
         flex-direction: column;
+        align-items: center;
     }
 
     .Alinhamento-img-texto {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 
@@ -813,6 +915,19 @@ i span {
     }
 }
 
+@media (min-width: 768px) and (max-width: 999px) {
+.Container-Principal{
+flex-direction: column;
+
+}
+
+.Titulo-Paragrafo h1{
+font-size: 45px
+}
+.Titulo-Paragrafo p {
+font-size: 30px;
+}
+}
 .Nav-Bar.active {
     transform: translateX(0);
     background: #23232e;
