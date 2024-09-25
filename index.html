@@ -58,6 +58,17 @@
     </header>
 
 
+    <section class="container-jogosNovos">
+        <div class="texto-promocao">
+        <h1>🔥 Promoção Imperdível! 🔥</h1>
+        <p>
+            Aventure-se em Yara, uma ilha cheia de ação e desafios, com 50% de desconto em Far Cry 6! Junte-se a Dani Rojas na luta contra a tirania de Antón Castillo. Explore um mundo aberto vibrante, personalize suas armas e viva uma experiência de tirar o fôlego.
+            
+            Não perca! A promoção é por tempo limitado. Garanta já o seu jogo e embarque nessa jornada épica!</p>
+        </div>
+        <button>saiba mais</button>
+    </section>
+    
     <div class="Container-Pedido">
         <div class="fechar-carrinho"><img src="img/fechar-img.png.crdownload" alt="fechar"></div>
         <div class="Itens-Carrinho">
@@ -68,6 +79,32 @@
             </div>
         </div>
         <button id="Finalizar-Pedido">Finalizar Pedido</button>
+
+        <div class="Container-Pagamento">
+        <h1>forma de pagamentos</h1>
+        <div class="formas-pagamento">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+
+        </div>
+
+        <div class="Caixa_FormCartao">
+            <h1>insira os dados do cartão</h1>
+            <form id="Form" method="post">
+              <input type="text" id="Nome" placeholder="Digite o nome do Titular da conta" required>
+              <input type="text" id="Numero_Cartao" placeholder="Digite o Numero do Cartão" required maxlength="16">
+              <input type="text" id="CPF" placeholder="Digite o seu Cpf" required>
+              <input type="password" id="Senha" placeholder="Digite a Senha do Cartão" required maxlength="4">
+              <input type="text" id="CVV" placeholder="Digite o CVV do Cartão" required>
+              <input type="text" id="validade-cartao" name="validade-cartao" placeholder="MM/AA" required maxlength="4">
+              <button type="submit">Enviar</button>
+    
+            </form>
+    
+    
+          </div>
+        </div>
     </div>
     <main>
         <section class="Container-Principal">
@@ -471,26 +508,33 @@
             <span class="Preco">R$ 10,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
         </div>
+
+        <div class=" hidden Jogos">
+            <img class="Imagem" src="img-eletronicos/eafc25.avif" alt="">
+            <h1 class="Titulo">ea fc 25</h1>
+            <span class="Preco">R$ 10,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+        </div>
     </section>
 
     <section class="Container-Console">
 
         <div class=" hidden Console">
-            <img src="img/ps3.png" alt="">
+            <img class="Imagem" src="img/ps3.png" alt="">
             <h1 class="Titulo">playstation 3</h1>
             <span class="Preco">R$ 1100,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
         <div class=" hidden Console">
-            <img src="img/ps4.png" alt="">
+            <img class="Imagem" src="img/ps4.png" alt="">
             <h1 class="Titulo">playstation 4</h1>
             <span class="Preco">R$ 1700,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
         <div class=" hidden Console">
-            <img src="img/ps5-removebg-preview (1).png" alt="">
+            <img class="Imagem" src="img/ps5-removebg-preview (1).png" alt="">
             <h1 class="Titulo">playstation 5</h1>
             <span class="Preco">R$ 3000,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
@@ -614,36 +658,36 @@
     <section class="Container-Acessorios-console">
 
         <div class=" hidden card-acessorios">
-            <h1>controle ps3</h1>
+            <h1 class="Titulo">controle ps3</h1>
             <div class="gallery">
                 <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
-                <img id="mainImage" src="img-eletronicos/controle-black-ps3.png" alt="Imagem" />
+                <img class="Imagem" id="mainImage" src="img-eletronicos/controle-black-ps3.png" alt="Imagem" />
                 <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
             </div>
-            <span class="preco">R$ 30,00</span>
-            <button class="detalhes-acessorios">pedir já</button>
+            <span class="Preco">R$ 30,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
 
         <div class=" hidden card-acessorios">
-            <h1>controle ps4</h1>
+            <h1 class="Titulo">controle ps4</h1>
             <div class="gallery">
                 <button class="arrow left" onclick="changeImage2(-1)">&#10094;</button>
-                <img id="mainImage2" src="img-eletronicos/controle-black-ps4.webp" alt="Imagem" />
+                <img class="Imagem" id="mainImage2" src="img-eletronicos/controle-black-ps4.webp" alt="Imagem" />
                 <button class="arrow right" onclick="changeImage2(1)">&#10095;</button>
             </div>
-            <span class="preco">R$ 80,00</span>
-            <button class="detalhes-acessorios">pedir já</button>
+            <span class="Preco">R$ 80,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
         </div>
         <div class=" hidden card-acessorios">
-            <h1>controle ps5</h1>
+            <h1 class="Titulo">controle ps5</h1>
             <div class="gallery">
                 <button class="arrow left" onclick="changeImage3(-1)">&#10094;</button>
-                <img id="mainImage3" src="img-eletronicos/controle-ps5-white.jpg" alt="Imagem" />
+                <img class="Imagem" id="mainImage3" src="img-eletronicos/controle-ps5-white.jpg" alt="Imagem" />
                 <button class="arrow right" onclick="changeImage3(1)">&#10095;</button>
             </div>
-            <span class="preco">R$ 130,00</span>
-            <button class="detalhes-acessorios">pedir já</button>
+            <span class="Preco">R$ 130,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
         </div>
     </section>
     <section class="Container-Form">
