@@ -19,7 +19,7 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
-    background-color: rgb(14, 13, 13);
+    background-image: url('img/far-cry-6-2000x1270-1.jpg');
 
 
 }
@@ -28,6 +28,52 @@ html {
     overflow-x: hidden;
 
 }
+
+.container-jogosNovos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Ajuste a altura conforme necessário */
+    flex-direction: column;
+}
+.texto-promocao{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 5px 10%;
+background-color: rgb(12, 10, 10 , 0.5);
+margin: 300px auto 0;
+}
+
+
+.container-jogosNovos h1 {
+font-size: 30px;
+color: #7F54B3;
+text-shadow: 2px 2px 4px rgb(0, 0, 0);
+font-weight: 700;
+font-family: Arial, Helvetica, sans-serif;
+}
+.container-jogosNovos p {
+font-size: 20px;
+font-weight: 600;
+text-shadow: 2px 2px 4px rgb(0, 0, 0);
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.container-jogosNovos button{
+    background: linear-gradient(135deg, #8A2BE2, #4B0082); /* Roxo forte para um roxo mais escuro */
+padding: 10px;
+width: 200px;
+color: white;
+border-radius: 10px;
+font-family: sans-serif;
+margin-top: 10px;
+}
+
 
 main {
     display: flex;
@@ -107,6 +153,10 @@ main {
     font-size: 1.3rem;
 }
 
+.dropdown-content li:hover{
+color: #7F54B3;
+}
+
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
@@ -122,18 +172,7 @@ main {
     cursor: pointer;
 }
 
-.container-sextou{
-display: none;
-justify-content: center;
-align-items: center;
-margin: 100px auto 0;
-position:fixed
-}
 
-.container-sextou img{
-width: 50%;
-height: auto;
-}
 
 .mobile-menu .line1,
 .line2,
@@ -255,6 +294,10 @@ height: auto;
     align-items: center;
     margin: 100px auto 0;
     justify-content: center;
+    background-color: rgb(14, 13, 13);
+    height: 100%;
+    width: 100%;
+
 }
 
 .Titulo-Paragrafo {
@@ -304,13 +347,13 @@ height: auto;
     align-items: center;
     flex-wrap: wrap;
     padding: 5px 5%;
-    background-color: rgb(59, 16, 59);
+    background: linear-gradient(135deg, #270844, #46136b); /* Roxo forte para um roxo mais escuro */
 }
 
 
 
 .Jogos {
-    background-color: #4b0082;
+    background-color: #271142;
     width: 100%;
     height: 250px;
     max-width: 210px;
@@ -382,7 +425,7 @@ margin-left: 10px;
     width: 100%;
     flex-wrap: wrap;
    padding: 5px;
-
+background-color: #100e14;
 }
 
 
@@ -746,6 +789,8 @@ align-items: end;
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: #100e14;
+
 }
 
 .Container-Sobre img {
