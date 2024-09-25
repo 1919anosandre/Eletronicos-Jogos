@@ -902,6 +902,7 @@ align-items: end;
     .Container-Acessorios-console,
     .Container-PC , .Container-Console  {
         flex-direction: column;
+max-width:100%
     }
 
 
