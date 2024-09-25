@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const Container_JogosPs5 = document.querySelector('.Container-Jogos-PS5');
         const Container_Console = document.querySelector('.Container-Console');
         const Container_PC = document.querySelector('.Container-PC');
+        const Container_Pagamento = document.querySelector('.Container-Pagamento')
 
         // Li
         const Inicio = document.querySelector('.Inicio');
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Container_JogosPs3.style.display = 'flex';
         Container_JogosPs5.style.display = 'none';
         Container_PC.style.display = 'flex';
+        Container_Pagamento.style.display = 'none';
 
 
 
@@ -408,4 +410,14 @@ function changeImage3(direction) {
 
 
     document.getElementById('mainImage3').src = images3[currentIndex3];
+}
+
+//novos jogos
+
+function novosjogos(){
+const container_jogosnovos = document.querySelector('.container-jogosNovos')
+
+
+
+
 }
