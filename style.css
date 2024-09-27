@@ -19,52 +19,148 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
-    background-image: url('img/far-cry-6-2000x1270-1.jpg');
 
 
 }
+/* Estilo para o slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 100vh; /* Define a altura como 100% da altura da tela */
+    margin: auto;
+    overflow: hidden; /* Garante que as imagens fiquem dentro do container */
+  
+}
 
-html {
-    overflow-x: hidden;
+.slides {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%; /* Garante que as imagens ocupem toda a altura disponível */
+}
+
+img {
+    width: 100%;
+    height: 100vh; /* Faz com que as imagens ocupem toda a altura da viewport */
+    object-fit: cover; /* Garante que as imagens cubram o contêiner, mantendo a proporção */
+    background-position: center;
+display: inline-block;
 
 }
 
-.container-jogosNovos {
+/* Texto sobre as imagens */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Botões anterior e próximo */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Efeito de transição */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Texto promocional */
+.texto-promocao {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh; /* Ajuste a altura conforme necessário */
     flex-direction: column;
+    margin: 300px auto 0;
+    width: 100%;
 }
-.texto-promocao{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-padding: 5px 10%;
-background-color: rgb(12, 10, 10 , 0.5);
-margin: 300px auto 0;
+
+.texto-promocao h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    color: #ffa500;
+}
+
+.texto-promocao p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-align: justify;
+    width: 100%;
+}
+
+
+html {
+    overflow-x: hidden;
+ 
+ 
 }
 
 
-.container-jogosNovos h1 {
-font-size: 30px;
-color: #7F54B3;
-text-shadow: 2px 2px 4px rgb(0, 0, 0);
-font-weight: 700;
-font-family: Arial, Helvetica, sans-serif;
-}
-.container-jogosNovos p {
-font-size: 20px;
-font-weight: 600;
-text-shadow: 2px 2px 4px rgb(0, 0, 0);
-color: white;
-font-family: Arial, Helvetica, sans-serif;
-
+.texto-promocao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 300px auto 0;
+    width: 100%; /* Garante que a largura ocupe toda a página */
 }
 
-.container-jogosNovos button{
+.texto-promocao h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    color: #ffa500;
+}
+
+.texto-promocao p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-align: justify; /* Ajusta o alinhamento para justificar o texto */
+    width: 100%; /* Define a largura total do parágrafo */
+    max-width: 800px; /* Limita a largura máxima do parágrafo */
+}
+
+
+.texto-promocao button{
     background: linear-gradient(135deg, #8A2BE2, #4B0082); /* Roxo forte para um roxo mais escuro */
 padding: 10px;
 width: 200px;
@@ -347,9 +443,9 @@ color: #7F54B3;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5px 5%;
+    padding: 1px;
     background: linear-gradient(135deg, #270844, #46136b); /* Roxo forte para um roxo mais escuro */
-width:100%
+width:100%;
 }
 
 
@@ -831,7 +927,10 @@ align-items: end;
 }
 
 @media all and (max-width: 767px) {
-
+body{
+    background-size: contain
+}
+    
     .Nav-Bar {
         top: 8vh;
         width: 70%;
@@ -902,7 +1001,7 @@ align-items: end;
     .Container-Acessorios-console,
     .Container-PC , .Container-Console  {
         flex-direction: column;
-max-width:100%
+max-width:100%;
     }
 
 
