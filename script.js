@@ -85,12 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100); // Ajuste o tempo para suavidade desejada
         }, 1000); // Tempo de espera inicial de 1 segundo
 
-       
+
 
         // Adiciona os listeners de evento
         Inicio.addEventListener("click", () => {
             Container_Principal.scrollIntoView({ behavior: "smooth" });
-            
+
         });
 
         JogosPS3.addEventListener("click", () => {
@@ -118,6 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     exibir_Ocultar_Container();
 });
+const searchInput = document.getElementById('searchInput'); // Pega o input de pesquisa
+const gamesList = document.querySelectorAll('.Jogos'); // Usando querySelectorAll pra pegar as divs de jogos
+
+searchInput.addEventListener('keyup', function () {
+    const filter = searchInput.value.toLowerCase();
+    gamesList.forEach(function (game) {
+        const title = game.querySelector('.Titulo'); // Pega o título dentro do jogo
+        const txtValue = title.textContent || title.innerText; // Obter o texto do título
+        game.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do jogo
+    });
+});
+
+
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
@@ -141,6 +154,7 @@ carrinhoButton.addEventListener('click', () => {
         document.querySelector('.Container-Pedido').style.display = 'block';
     } else {
         document.querySelector('.Container-Pedido').style.display = 'none';
+        alert('o carrinho está vazio!')
     }
 });
 
@@ -398,8 +412,8 @@ function showSlides() {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 10000); // Muda a cada 3 segundos
 }
 
@@ -410,10 +424,10 @@ function plusSlides(n) {
 
 function showSlide(n) {
     let slides = document.getElementsByClassName("slides");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    slides[slideIndex-1].style.display = "block";
+    slides[slideIndex - 1].style.display = "block";
 }
