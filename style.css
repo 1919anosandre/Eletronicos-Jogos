@@ -1,4 +1,4 @@
-* {
+7* {
     margin: 0;
     text-transform: capitalize;
     padding: 0;
@@ -1124,8 +1124,13 @@ i span {
     .Pedido{
     flex-direction: column;
     }
+.Container-JogosNovos{
+width:100%;
+}
 
-  
+.Container-JogosNovos img{
+  height: auto;
+max-width:100%;
 }
 
 @media (min-width: 768px) and (max-width: 999px) {
