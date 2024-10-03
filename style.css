@@ -1124,11 +1124,11 @@ i span {
     .Pedido{
     flex-direction: column;
     }
-.Container-JogosNovos{
+.slideshow-container{
 width:100%;
 }
 
-.Container-JogosNovos img{
+.slideshow-container img {
   height: auto;
 max-width:100%;
 }
