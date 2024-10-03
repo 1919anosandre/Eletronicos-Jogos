@@ -188,7 +188,7 @@ function adicionarCarrinho(event) {
             <input type="number" class="Quantidade" min="1" max="10" value="1">
         </div>
         <button class="Remover-Pedido">Remover</button>
-    `;
+    `
     const containerPedido = document.querySelector('.Itens-Carrinho');
     containerPedido.append(novoPedido);
 
