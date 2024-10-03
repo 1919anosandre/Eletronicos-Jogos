@@ -148,6 +148,36 @@ html {
     /* Limita a largura máxima do parágrafo */
 }
 
+.texto-promocao a{
+    /* Roxo forte para um roxo mais escuro */
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+   background-color: #191336;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px black;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    animation: animacao-padding 4s ease-in-out infinite alternate;
+}
+@keyframes animacao-padding {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.02); /* Aumenta um pouco o tamanho */
+    }
+  
+    100% {
+      transform: scale(1.07); /* Aumenta ainda mais o tamanho */
+    }
+  }
+.texto-promocao a:hover{
+cursor: pointer;
+}
 
 .texto-promocao button {
     background: linear-gradient(135deg, #8A2BE2, #4B0082);
@@ -961,10 +991,9 @@ i span {
 
     .Nav-Bar {
         top: 8vh;
-        width: 70%;
+        width: 100%;
         height: 45vh;
         display: flex;
-        /* Make it a flex container */
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -987,6 +1016,7 @@ i span {
 
     .mobile-menu {
         display: block;
+        margin-left: auto;
 
     }
 
@@ -996,18 +1026,6 @@ i span {
 
     }
 
-.texto-promocao h1{
-font-size: 1.3rem
-}
-
-.Texto-Promocao p{
-font-size: 1.1rem
-}
-
-.slideshow-container img {
-objet-fit : contain;
-
-}
     .Img-Principal {
         justify-content: center;
         align-items: center;
@@ -1102,6 +1120,12 @@ objet-fit : contain;
     i span {
         font-size: 0.9rem;
     }
+
+    .Pedido{
+    flex-direction: column;
+    }
+
+  
 }
 
 @media (min-width: 768px) and (max-width: 999px) {
