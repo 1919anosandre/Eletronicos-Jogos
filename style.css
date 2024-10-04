@@ -1,4 +1,4 @@
-7* {
+* {
     margin: 0;
     text-transform: capitalize;
     padding: 0;
@@ -25,9 +25,8 @@ body {
 
 /* Estilo para o slideshow */
 .slideshow-container {
-    position: relative;
     max-width: 100%;
-    height: 100vh;
+    height: 500px;
     /* Define a altura como 100% da altura da tela */
     overflow: hidden;
     /* Garante que as imagens fiquem dentro do container */
@@ -121,13 +120,13 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 300px auto 0;
+    margin: 100px auto 0;
     width: 100%;
     /* Garante que a largura ocupe toda a página */
 }
 
 .texto-promocao h1 {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -135,7 +134,7 @@ html {
 }
 
 .texto-promocao p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: white;
     letter-spacing: 1px;
@@ -148,13 +147,13 @@ html {
     /* Limita a largura máxima do parágrafo */
 }
 
-.texto-promocao a{
+.texto-promocao a {
     /* Roxo forte para um roxo mais escuro */
     font-family: sans-serif;
     text-decoration: none;
     font-size: 2rem;
     font-weight: bold;
-   background-color: #191336;
+    background-color: #191336;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px black;
     color: white;
@@ -162,21 +161,25 @@ html {
     width: 200px;
     animation: animacao-padding 4s ease-in-out infinite alternate;
 }
+
 @keyframes animacao-padding {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  
+
     50% {
-      transform: scale(1.02); /* Aumenta um pouco o tamanho */
+        transform: scale(1.02);
+        /* Aumenta um pouco o tamanho */
     }
-  
+
     100% {
-      transform: scale(1.07); /* Aumenta ainda mais o tamanho */
+        transform: scale(1.07);
+        /* Aumenta ainda mais o tamanho */
     }
-  }
-.texto-promocao a:hover{
-cursor: pointer;
+}
+
+.texto-promocao a:hover {
+    cursor: pointer;
 }
 
 .texto-promocao button {
@@ -187,7 +190,7 @@ cursor: pointer;
     color: white;
     border-radius: 10px;
     font-family: sans-serif;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 
@@ -242,7 +245,6 @@ main {
     display: inline-block;
     justify-content: center;
     align-items: center;
-    position: relative;
 
 }
 
@@ -255,24 +257,24 @@ main {
     cursor: pointer;
     font-weight: 700;
     margin: 0 12px;
+    display: none;
 }
 
 .dropdown-content {
     display: none;
     /* Esconde o dropdown por padrão */
-    position: absolute;
     background-color: #100e14;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    position: absolute;
 }
 
 .dropdown-content li {
     color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
     font-size: 1.3rem;
+    z-index: 1;
 }
 
 .dropdown-content li:hover {
@@ -462,6 +464,45 @@ main {
 }
 
 
+.cabecalho-jogos {
+    height: 300px;
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-image: url('img-eletronicos/ilustracao.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cabecalho-consoles {
+    height: 300px;
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-image: url('img-eletronicos/ilustracao-console.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+    background-color: #1e071f;
+
+}
+
+h3 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+    background-color: #1e071f;
+
+}
 
 .Container-Jogos-PS3,
 .Container-Jogos-PS4,
@@ -477,7 +518,6 @@ main {
 
 .row {
     display: flex;
-    background-color: #270844;
     justify-content: center;
     align-items: center;
 }
@@ -493,12 +533,11 @@ main {
 }
 
 .row input {
-    background-color: #ffffff;
-    color: #270844;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
     padding: 10px;
     border-radius: 10px;
-    width: 300px;
-    margin-top: 5px;
+    width: 350px;
 
 }
 
@@ -1120,26 +1159,35 @@ i span {
     i span {
         font-size: 0.9rem;
     }
-.texto-promocao h1{
-font-size: 1.4rem
-}
 
-.texto-promocao p{
-font-size: 1.1rem
-}
-
-    .Pedido{
-    flex-direction: column;
+    .texto-promocao h1 {
+        font-size: 0.9rem;
+        font-weight: bold;
     }
-.slideshow-container{
-width:100%;
-}
 
-.slideshow-container img {
-  height: auto;
-max-width:100%;
-display: block;
-}
+    .texto-promocao p {
+        font-size: 0.7rem;
+        font-weight: 500;
+
+    }
+
+    .Pedido {
+        flex-direction: column;
+    }
+
+    .slideshow-container {
+        width: 100%;
+    }
+
+    .slideshow-container img {
+        max-width: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 600px;
+    }
+
+
 }
 
 @media (min-width: 768px) and (max-width: 999px) {
@@ -1148,12 +1196,25 @@ display: block;
 
     }
 
+    .texto-promocao h1 {
+        font-size: 1.6rem
+    }
+
+    .texto-promocao p {
+        font-size: 1.4rem
+    }
+
     .Titulo-Paragrafo h1 {
         font-size: 45px
     }
 
     .Titulo-Paragrafo p {
         font-size: 30px;
+    }
+
+    .Container-Console,
+    .Container-Acessorios-console {
+        flex-direction: column;
     }
 }
 
