@@ -127,15 +127,16 @@ html {
 
 .texto-promocao h1 {
     font-size: 1.9rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
+    color: #ffffff;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    color: rgb(13, 255, 73);
+
 }
 
 .texto-promocao p {
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: white;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -257,7 +258,6 @@ main {
     cursor: pointer;
     font-weight: 700;
     margin: 0 12px;
-    display: none;
 }
 
 .dropdown-content {
@@ -449,7 +449,7 @@ main {
     font-size: 5em;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    color: rgb(63, 35, 141);
+    color: #f00034;
 
 }
 
@@ -480,29 +480,38 @@ main {
     display: flex;
     width: 100%;
     position: relative;
-    background-image: url('img-eletronicos/ilustracao-console.jpg');
+    background-image: url('img-eletronicos/console-acessorios.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-h2 {
+.cabecalho-pc-acessorios {
+    height: 300px;
+    display: flex;
+    width: 100%;
+    position: relative;
+    background-image: url('img-eletronicos/pc-acessorios.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 2.5rem;
     color: white;
     text-shadow: 2px 2px 4px black;
     text-align: center;
-    background-color: #1e071f;
+    background-color: #f00034;
 
 }
 
-h3 {
-    font-size: 2.5rem;
-    color: white;
-    text-shadow: 2px 2px 4px black;
-    text-align: center;
-    background-color: #1e071f;
 
-}
 
 .Container-Jogos-PS3,
 .Container-Jogos-PS4,
@@ -513,7 +522,7 @@ h3 {
     flex-wrap: wrap;
     padding: 1px;
     width: 100%;
-    background-color: #270844;
+    background-color: #100e14;
 }
 
 .row {
@@ -533,8 +542,8 @@ h3 {
 }
 
 .row input {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    color: #270844;
     padding: 10px;
     border-radius: 10px;
     width: 350px;
@@ -542,7 +551,7 @@ h3 {
 }
 
 .Jogos {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 250px;
     max-width: 210px;
@@ -558,7 +567,7 @@ h3 {
 
 .Jogos h1 {
     text-align: center;
-    color: rgb(53, 28, 119);
+    color: #270844;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -574,7 +583,7 @@ h3 {
 }
 
 span {
-    color: rgba(238, 0, 0, 0.973);
+    color: #f00034;
     font-size: 0.9rem;
     font-weight: bold;
 }
@@ -595,7 +604,7 @@ span {
     letter-spacing: 1px;
     padding: 3px;
     margin-top: 5px;
-    background-color: rgb(50, 21, 117);
+    background-color: #270844;
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: bold;
@@ -622,7 +631,7 @@ span {
 .Container-Console h1,
 .Container-PC h1,
 .Container-Acessorios-console h1 {
-    color: rgb(53, 28, 119);
+    color: #270844;
     font-weight: 700;
     font-size: 1.3rem;
 
@@ -704,7 +713,7 @@ span {
     width: 60%;
     padding: 10px;
     margin-top: 5px;
-    background-color: rgb(50, 21, 117);
+    background-color: #270844;
     color: #ffffff;
 }
 
@@ -721,7 +730,7 @@ span {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: rgb(47, 250, 47);
+    background-color: #100e14;
 
 }
 
@@ -734,7 +743,7 @@ span {
 
 .Inputs-Form h1 {
     font-size: 1.4rem;
-    color: #fff9f9;
+    color: #f00034;
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -744,17 +753,16 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid rgb(31, 29, 29);
     max-width: 350px;
     width: 100%;
     height: 350px;
-    background-color: rgba(15, 14, 14);
+    background-color: rgb(255, 255, 255);
     border-radius: 7px;
 }
 
 .Inputs-Form input {
-    background-color: rgba(255, 255, 255);
-    color: #000000;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
     border-radius: 7px;
     border: 1px solid rgb(182, 174, 174);
     padding: 15px;
@@ -767,9 +775,8 @@ span {
 
 .Inputs-Form button {
     width: 70%;
-    background-color: rgb(46, 255, 81);
-    border: 1px solid rgb(0, 0, 0);
-    color: #0f0f0f;
+    background-color: #270844;
+    color: #ffffff;
     border-radius: 7px;
     margin-top: 15px;
     padding: 10px;
@@ -778,8 +785,6 @@ span {
 
 .Inputs-Form button:hover {
     cursor: pointer;
-    background-color: rgb(0, 0, 0);
-    color: rgb(46, 255, 81);
     background-color: #1f1e1e;
 }
 
@@ -830,7 +835,7 @@ i {
 
 i h1 {
     font-size: 1.3rem;
-    color: rgb(63, 35, 141);
+    color: #f00034;
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -856,12 +861,12 @@ i h1 {
 
 i svg {
     margin-left: 15px;
-    color: rgb(63, 35, 141);
+    color: #f00034;
 }
 
 i span {
     margin-left: 15px;
-    color: rgb(63, 35, 141);
+    color: #f00034;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     font-size: 1.1rem;
 }
@@ -1004,7 +1009,7 @@ i span {
 }
 
 .Itens-Sobre-Texto h1 {
-    color: rgb(63, 35, 141);
+    color: #f00034;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 1.3rem;
@@ -1014,7 +1019,7 @@ i span {
 .Itens-Sobre-Texto p {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #ccc;
+    color: white;
 }
 
 .Alinhamento-img-texto {
@@ -1092,6 +1097,12 @@ i span {
     .Container-PC,
     .Container-Form {
         width: 100%;
+    }
+
+    .Container-Jogos-PS3,
+    .Container-Jogos-PS4,
+    .Container-Jogos-PS5 {
+        gap: 7px;
     }
 
 
