@@ -53,10 +53,38 @@
                 <li class="Funcionamento"></li>
 
 
+                <div class="barra-pesquisa">
+
+                    <div class="row">
+
+                        <input type="text" id="searchInput" placeholder="digite o nome do jogo">
+                        <img src="img-eletronicos/pesquisa.webp" class="pesquisar" alt="">
+                    </div>
+
+                </div>
+
+
             </ul>
         </nav>
     </header>
+
+
     <div class="slideshow-container">
+
+        <div class="slides fade">
+            <img src="img-eletronicos/ilustracao.jpg" alt="slide">
+            <div class="text-overlay">
+
+                <div class="texto-promocao">
+                    <h1>Station Games </h1>
+                    <p>A melhor loja de games e eletronicos da região</p>
+                </div>
+
+
+            </div>
+        </div>
+
+
         <div class="slides fade">
             <img src="img-eletronicos/Far-Cry-6-Review.jpg" style="width:100%">
             <div class="text-overlay">
@@ -67,7 +95,7 @@
                         Junte-se a Dani Rojas na luta contra a tirania de Antón Castillo.
                         Não perca! A promoção é por tempo limitado. Garanta já o seu jogo e embarque nessa jornada
                         épica!</p>
-                    <button>saiba mais</button>
+                    <button class="promocao-farcryseis">saiba mais</button>
 
                 </div>
             </div>
@@ -99,6 +127,7 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
+    </main>
 
 
     <div class="Container-Pedido">
@@ -115,31 +144,20 @@
 
 
     </div>
-    <main>
-        <section class="Container-Principal">
 
-            <div class=" hidden Titulo-Paragrafo">
-                <h1>Station Games </h1>
-                <p>A melhor loja de games e eletronicos da região</p>
-            </div>
-
-            <div class=" hidden Img-Principal">
-                <img id="slideshow" src="img/far-cry-viloes-removebg-preview.png" alt="slide">
-
-            </div>
-        </section>
-    </main>
-
-    <div class="cabecalho-jogos">
-        <div class="text-overlay">
-
-            <div class="row">
-
-                <input type="text" id="searchInput" placeholder="digite o nome do jogo">
-                <img src="img/vector-search-icon-removebg-preview.png" class="pesquisar" alt="">
-            </div>
+    <div class="especificacoes">
+        <div class="row-especificacoes">
+            <li><img src="img-eletronicos/check-mark-icon-sign-symbol-design-free-png.webp" alt=""><i>loja</i> 100%
+                oficial</li>
+            <li><img src="img-eletronicos/logo-security.png" alt=""><i>experiência</i> segura e simples</li>
+            <li><img src="img-eletronicos/logo-controle-removebg-preview.png" alt=""><i>divirta-se</i> com os melhores
+                jogos</li>
 
         </div>
+    </div>
+
+    <div class="cabecalho-jogos">
+
 
     </div>
     <h2>Jogos</h2>
@@ -271,6 +289,30 @@
             <span class="Preco">R$ 49,00</span>
             <button class="Adicionar-Carrinho">adicionar ao carrinho</button>
         </div>
+        <div class=" hidden Jogos">
+            <img class="Imagem" src="img-eletronicos/formula1-2012.webp" alt="">
+            <h1 class="Titulo">formula 1 2012</h1>
+            <span class="Preco">R$ 49,00</span>
+            <button class="Adicionar-Carrinho">adicionar ao carrinho</button>
+        </div>
+        <div class=" hidden Jogos">
+            <img class="Imagem" src="img-eletronicos/need-for-speed-carbon.jpg" alt="">
+            <h1 class="Titulo">need for speed carbon</h1>
+            <span class="Preco">R$ 49,00</span>
+            <button class="Adicionar-Carrinho">adicionar ao carrinho</button>
+        </div>
+        <div class=" hidden Jogos">
+            <img class="Imagem" src="img-eletronicos/PES-2013-1.jpg" alt="">
+            <h1 class="Titulo">pes 2013</h1>
+            <span class="Preco">R$ 49,00</span>
+            <button class="Adicionar-Carrinho">adicionar ao carrinho</button>
+        </div>
+        <div class=" hidden Jogos">
+            <img class="Imagem" src="img-eletronicos/call-of-duty-ghosts-game.jpg" alt="">
+            <h1 class="Titulo">call of duty ghosts</h1>
+            <span class="Preco">R$ 49,00</span>
+            <button class="Adicionar-Carrinho">adicionar ao carrinho</button>
+        </div>
     </section>
 
     <section class="Container-Jogos-PS4">
@@ -338,12 +380,21 @@
             <span class="Preco">R$ 10,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
         </div>
-        <div class=" hidden Jogos">
-            <img class="Imagem" src="img/far-cry-6-2000x1270-1.jpg" alt="">
-            <h1 class="Titulo">far cry 6</h1>
-            <span class="Preco">R$ 10,00</span>
-            <button class="Adicionar-Carrinho">pedir já</button>
-        </div>
+        <i id="exibir-card-farcry">
+
+            <div class=" hidden Jogos">
+                <img class="Imagem" src="img/far-cry-6-2000x1270-1.jpg" alt="">
+                <h1 class="Titulo">far cry 6</h1>
+                <div class="promocao">
+                    <span class="Preco"> <del>R$ 290,00</del></span>
+                    <span class="preco-promocao">R$ 190,00</span>
+
+                </div>
+                <button class="Adicionar-Carrinho">pedir já</button>
+            </div>
+
+        </i>
+
         <div class=" hidden Jogos">
             <img class="Imagem" src="img/watch_dogs_2_hires_header_1.jpg" alt="">
             <h1 class="Titulo">watch dogs 2</h1>
@@ -565,18 +616,17 @@
             <span class="Preco">R$ 10,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
         </div>
+
+        <div class=" hidden Jogos">
+            <img class="Imagem" src="img-eletronicos/gta6.jpg" alt="">
+            <h1 class="Titulo">gta 6</h1>
+            <span class="Preco">R$ 800,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+        </div>
     </section>
 
     <div class="cabecalho-consoles">
-        <div class="text-overlay">
 
-            <div class="row">
-
-                <input type="text" id="searchInput" placeholder="digite o nome do jogo">
-                <img src="img/vector-search-icon-removebg-preview.png" class="pesquisar" alt="">
-            </div>
-
-        </div>
 
     </div>
     <h3>consoles</h3>
@@ -600,6 +650,41 @@
             <img class="Imagem" src="img/ps5-removebg-preview (1).png" alt="">
             <h1 class="Titulo">playstation 5</h1>
             <span class="Preco">R$ 3000,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+
+        </div>
+        <div class=" hidden Console">
+            <img class="Imagem" src="img-eletronicos/xbox-one.jpg" alt="">
+            <h1 class="Titulo">xbox-one</h1>
+            <span class="Preco">R$ 1800,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+
+        </div>
+        <div class=" hidden Console">
+            <img class="Imagem" src="img-eletronicos/xbox-seriesS.jpg" alt="">
+            <h1 class="Titulo">xbox series S</h1>
+            <span class="Preco">R$ 2700,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+
+        </div>
+        <div class=" hidden Console">
+            <img class="Imagem" src="img-eletronicos/xbox-seriesX.jpg" alt="">
+            <h1 class="Titulo">xbox series x</h1>
+            <span class="Preco">R$ 3000,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+
+        </div>
+        <div class=" hidden Console">
+            <img class="Imagem" src="img-eletronicos/psp.jpg" alt="">
+            <h1 class="Titulo">psp</h1>
+            <span class="Preco">R$ 400,00</span>
+            <button class="Adicionar-Carrinho">pedir já</button>
+
+        </div>
+        <div class=" hidden Console">
+            <img class="Imagem" src="img-eletronicos/Nintendo-Switch-Console-Docked-wJoyConRB.jpg" alt="">
+            <h1 class="Titulo">nintendo switch</h1>
+            <span class="Preco">R$ 2000,00</span>
             <button class="Adicionar-Carrinho">pedir já</button>
 
         </div>
@@ -653,15 +738,7 @@
 
 
     <div class="cabecalho-pc-acessorios">
-        <div class="text-overlay">
 
-            <div class="row">
-
-                <input type="text" id="searchInput" placeholder="digite o nome do jogo">
-                <img src="img/vector-search-icon-removebg-preview.png" class="pesquisar" alt="">
-            </div>
-
-        </div>
 
     </div>
     <h4>conputadores e acessórios</h4>
@@ -836,6 +913,7 @@
 
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
