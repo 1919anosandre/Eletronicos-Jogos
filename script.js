@@ -48,7 +48,6 @@ mobileNavbar.init();
 document.addEventListener('DOMContentLoaded', () => {
     function exibir_Ocultar_Container() {
         // Containers
-        const Container_Principal = document.querySelector('.Container-Principal');
         const Container_JogosPs3 = document.querySelector('.Container-Jogos-PS3');
         const Container_JogosPs4 = document.querySelector('.Container-Jogos-PS4');
         const Container_JogosPs5 = document.querySelector('.Container-Jogos-PS5');
@@ -64,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const PC = document.querySelector('.PC-Gamer');
 
         // Inicializar
-        Container_Principal.style.opacity = '0';
         Container_JogosPs4.style.display = 'none';
         Container_JogosPs3.style.display = 'flex';
         Container_JogosPs5.style.display = 'none';
@@ -72,26 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // Fade in para Container_Principal
-        setTimeout(() => {
-            let opacity = 0;
-            const interval = setInterval(() => {
-                opacity += 0.05;
-                Container_Principal.style.opacity = opacity.toString();
-
-                if (opacity >= 1) {
-                    clearInterval(interval);
-                }
-            }, 100); // Ajuste o tempo para suavidade desejada
-        }, 1000); // Tempo de espera inicial de 1 segundo
-
 
 
         // Adiciona os listeners de evento
-        Inicio.addEventListener("click", () => {
-            Container_Principal.scrollIntoView({ behavior: "smooth" });
 
-        });
 
         JogosPS3.addEventListener("click", () => {
             Container_JogosPs3.scrollIntoView({ behavior: "smooth" });
@@ -120,15 +102,43 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 const searchInput = document.getElementById('searchInput'); // Pega o input de pesquisa
 const gamesList = document.querySelectorAll('.Jogos'); // Usando querySelectorAll pra pegar as divs de jogos
+const consoleList = document.querySelectorAll('.Console');
+const pcList = document.querySelectorAll('.PC');
+const pesquisa = document.querySelector('.pesquisar');
 
-searchInput.addEventListener('keyup', function () {
+// Função para filtrar os resultados
+function filtrarResultados() {
     const filter = searchInput.value.toLowerCase();
+    if (filter === '') {
+        alert('Por favor, digite algo para pesquisar!');
+        return;
+    }
+
     gamesList.forEach(function (game) {
         const title = game.querySelector('.Titulo'); // Pega o título dentro do jogo
         const txtValue = title.textContent || title.innerText; // Obter o texto do título
         game.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do jogo
     });
-});
+
+    consoleList.forEach(function (console) {
+        const title = console.querySelector('.Titulo'); // Pega o título dentro do console
+        const txtValue = title.textContent || title.innerText; // Obter o texto do título
+        console.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do console
+    });
+
+    pcList.forEach(function (pc) {
+        const title = pc.querySelector('.Titulo'); // Pega o título dentro do pc
+        const txtValue = title.textContent || title.innerText; // Obter o texto do título
+        pc.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do pc
+    });
+}
+
+// Adiciona evento de keyup no input de pesquisa
+searchInput.addEventListener('keyup', filtrarResultados);
+
+// Adiciona evento de clique no botão de pesquisar
+pesquisa.addEventListener('click', filtrarResultados);
+
 
 
 
@@ -227,22 +237,6 @@ function atualizarPreco() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slideshow = document.getElementById('slideshow');
-    const images = [
-        'img/joel_and_ellie_wallpaper_by_mrjuniorer_d8aa27v-fullview-removebg-preview.png',
-        'img/far-cry-viloes-removebg-preview.png',
-        'img/gta5.wallpaper-removebg-preview.png'
-    ];
-    let currentImageIndex = 0;
-
-    function changeImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        slideshow.src = images[currentImageIndex];
-    }
-
-    setInterval(changeImage, 3000); // Muda a imagem a cada 3 segundos
-});
 let inputemail = document.querySelector('.email-input')
 
 function validacao() {
@@ -328,78 +322,7 @@ const observar = new IntersectionObserver((entries) => {
 const elements = document.querySelectorAll('.hidden')
 elements.forEach((elements) => observar.observe(elements))
 
-// oque mais fazer   achar um dia no mes especifico para promoçoes e exibir um alert no dia da promoçao   e qnd chegar a promocao dar um desconto para o preco de todos os produtos igualmente
 
-// galeria img acessorios
-let images = [
-    'img-eletronicos/controle-black-ps3.png',
-    'img-eletronicos/controle-prata-ps3.webp',
-];
-
-let currentIndex = 0;
-
-function changeImage(direction) {
-    currentIndex += direction;
-
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-    } else if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
-
-    if (images == [1]) {
-        preco.textContent = 'R$ 40,00'
-    }
-
-    document.getElementById('mainImage').src = images[currentIndex];
-}
-
-let images2 = [
-    'img-eletronicos/controle-black-ps4.webp',
-    'img-eletronicos/controle-white-ps4.webp',
-    'img-eletronicos/controle-ps4-azul.webp'
-]
-
-let currentIndex2 = 0
-
-function changeImage2(direction) {
-    currentIndex2 += direction;
-
-    if (currentIndex2 < 0) {
-        currentIndex2 = images2.length - 1;
-    } else if (currentIndex2 >= images2.length) {
-        currentIndex2 = 0;
-    }
-
-    if (images == [1]) {
-        preco.textContent = 'R$ 40,00'
-    }
-
-    document.getElementById('mainImage2').src = images2[currentIndex2];
-}
-
-
-let images3 = [
-    'img-eletronicos/controle-ps5-white.jpg',
-    'img-eletronicos/controle-ps5-black.png',
-    'img-eletronicos/controle-ps5-rosa.png'
-]
-
-let currentIndex3 = 0
-
-function changeImage3(direction) {
-    currentIndex3 += direction;
-
-    if (currentIndex3 < 0) {
-        currentIndex3 = images3.length - 1;
-    } else if (currentIndex3 >= images3.length) {
-        currentIndex3 = 0;
-    }
-
-
-
-    document.getElementById('mainImage3').src = images3[currentIndex3];
-}
 
 let slideIndex = 0;
 showSlides();
@@ -431,3 +354,17 @@ function showSlide(n) {
     }
     slides[slideIndex - 1].style.display = "block";
 }
+
+
+//promoções jogos e eletronicos
+
+const saibamais = document.querySelector('.promocao-farcryseis')
+const farcryseis = document.querySelector('#exibir-card-farcry')
+
+saibamais.addEventListener('click', () => {
+    farcryseis.scrollIntoView({ behavior: "smooth" });
+})
+
+
+
+
