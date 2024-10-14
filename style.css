@@ -27,9 +27,8 @@ body {
 .slideshow-container {
     max-width: 100%;
     height: 500px;
-    /* Define a altura como 100% da altura da tela */
     overflow: hidden;
-    /* Garante que as imagens fiquem dentro do container */
+    
 
 }
 
@@ -38,16 +37,15 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    /* Garante que as imagens ocupem toda a altura disponível */
+    
 
 }
 
 .slideshow-container img {
     width: 100%;
     height: 100vh;
-    /* Faz com que as imagens ocupem toda a altura da viewport */
+    
     object-fit: cover;
-    /* Garante que as imagens cubram o contêiner, mantendo a proporção */
     background-position: center;
     display: inline-block;
 
@@ -122,7 +120,7 @@ html {
     flex-direction: column;
     margin: 100px auto 0;
     width: 100%;
-    /* Garante que a largura ocupe toda a página */
+    
 }
 
 .texto-promocao h1 {
@@ -141,15 +139,13 @@ html {
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     text-align: center;
-    /* Ajusta o alinhamento para justificar o texto */
     width: 100%;
-    /* Define a largura total do parágrafo */
+    
     max-width: 800px;
-    /* Limita a largura máxima do parágrafo */
+    
 }
 
 .texto-promocao a {
-    /* Roxo forte para um roxo mais escuro */
     font-family: sans-serif;
     text-decoration: none;
     font-size: 2rem;
@@ -170,12 +166,12 @@ html {
 
     50% {
         transform: scale(1.02);
-        /* Aumenta um pouco o tamanho */
+        
     }
 
     100% {
         transform: scale(1.07);
-        /* Aumenta ainda mais o tamanho */
+       
     }
 }
 
