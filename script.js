@@ -1,3 +1,4 @@
+//menu hamburguer
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
         this.mobileMenu = document.querySelector(mobileMenu);
@@ -44,7 +45,7 @@ const mobileNavbar = new MobileNavbar(
 );
 mobileNavbar.init();
 
-
+// mostrar e esconder elementos 
 document.addEventListener('DOMContentLoaded', () => {
     function exibir_Ocultar_Container() {
         // Containers
@@ -62,18 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const Consoles = document.querySelector('.Console-li');
         const PC = document.querySelector('.PC-Gamer');
 
-        // Inicializar
         Container_JogosPs4.style.display = 'none';
         Container_JogosPs3.style.display = 'flex';
         Container_JogosPs5.style.display = 'none';
         Container_PC.style.display = 'flex';
-
-
-
-
-
-        // Adiciona os listeners de evento
-
 
         JogosPS3.addEventListener("click", () => {
             Container_JogosPs3.scrollIntoView({ behavior: "smooth" });
@@ -100,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     exibir_Ocultar_Container();
 });
-const searchInput = document.getElementById('searchInput'); // Pega o input de pesquisa
-const gamesList = document.querySelectorAll('.Jogos'); // Usando querySelectorAll pra pegar as divs de jogos
+const searchInput = document.getElementById('searchInput');
+const gamesList = document.querySelectorAll('.Jogos');
 const consoleList = document.querySelectorAll('.Console');
 const pcList = document.querySelectorAll('.PC');
 const pesquisa = document.querySelector('.pesquisar');
@@ -115,33 +108,29 @@ function filtrarResultados() {
     }
 
     gamesList.forEach(function (game) {
-        const title = game.querySelector('.Titulo'); // Pega o título dentro do jogo
-        const txtValue = title.textContent || title.innerText; // Obter o texto do título
-        game.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do jogo
+        const title = game.querySelector('.Titulo');
+        const txtValue = title.textContent || title.innerText;
+        game.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
     });
 
     consoleList.forEach(function (console) {
-        const title = console.querySelector('.Titulo'); // Pega o título dentro do console
-        const txtValue = title.textContent || title.innerText; // Obter o texto do título
-        console.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do console
+        const title = console.querySelector('.Titulo');
+        const txtValue = title.textContent || title.innerText;
+        console.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
     });
 
     pcList.forEach(function (pc) {
-        const title = pc.querySelector('.Titulo'); // Pega o título dentro do pc
-        const txtValue = title.textContent || title.innerText; // Obter o texto do título
-        pc.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none"; // Exibe ou oculta a div do pc
+        const title = pc.querySelector('.Titulo');
+        const txtValue = title.textContent || title.innerText;
+        pc.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
     });
 }
 
-// Adiciona evento de keyup no input de pesquisa
 searchInput.addEventListener('keyup', filtrarResultados);
 
-// Adiciona evento de clique no botão de pesquisar
 pesquisa.addEventListener('click', filtrarResultados);
 
-
-
-
+// carrinho de compras
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -236,6 +225,7 @@ function atualizarPreco() {
     document.querySelector('.Total-Container span').innerText = 'R$ ' + total;
 }
 
+//validar e-mail para enviar notificação
 
 let inputemail = document.querySelector('.email-input')
 
@@ -249,7 +239,6 @@ function validacao() {
     }
     return validarEmail(document.querySelector('.email-input'));
 }
-
 function validarEmail(field) {
     const usuario = field.value.substring(0, field.value.indexOf("@"));
     const dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
@@ -277,16 +266,15 @@ function validarEmail(field) {
 
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.Container-Form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita o envio do formulário antes da validação
+        event.preventDefault();
         if (validacao()) {
-            // Se o formulário for válido, pode prosseguir com o envio
             alert('Dados enviados com sucesso!');
             this.submit();
         }
     });
 
 });
-
+// hora de funcionamento do site
 function horarios_funcionamento() {
     const funcionamento = document.querySelector('.Funcionamento')
     const horario = new Date()
@@ -323,30 +311,28 @@ const elements = document.querySelectorAll('.hidden')
 elements.forEach((elements) => observar.observe(elements))
 
 
-
+//galeria das promoçoes e lançamentos do site
 let slideIndex = 0;
 showSlides();
 
-// Função para mostrar os slides automaticamente
 function showSlides() {
     let i;
-    let slides = document.getElementsByClassName("slides");
+    let slides = document.getElementsByClassName("galeria");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1 }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 10000); // Muda a cada 3 segundos
+    setTimeout(showSlides, 10000);
 }
 
-// Função para os botões de anterior/próximo
 function plusSlides(n) {
     showSlide(slideIndex += n);
 }
 
 function showSlide(n) {
-    let slides = document.getElementsByClassName("slides");
+    let slides = document.getElementsByClassName("galeria");
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (let i = 0; i < slides.length; i++) {
@@ -355,15 +341,50 @@ function showSlide(n) {
     slides[slideIndex - 1].style.display = "block";
 }
 
+// galeria dos controles dos console
+let currentImageIndex = 0;
+let currentImageIndex2 = 0;
+let currentImageIndex3 = 0;
 
-//promoções jogos e eletronicos
+function changeImage(direction) {
+    const images = [
+        "img-eletronicos/controle-black-ps3.png",
+        "img-eletronicos/controle-prata-ps3.webp"
+    ];
+    currentImageIndex = (currentImageIndex + direction) % images.length;
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    }
+    document.getElementById("mainImage").src = images[currentImageIndex];
+}
 
-const saibamais = document.querySelector('.promocao-farcryseis')
-const farcryseis = document.querySelector('#exibir-card-farcry')
+function changeImage2(direction) {
+    const images = [
+        "img-eletronicos/controle-black-ps4.webp",
+        "img-eletronicos/controle-ps4-azul.webp",
+        "img-eletronicos/controle-white-ps4.webp"
+    ];
+    currentImageIndex2 = (currentImageIndex2 + direction) % images.length;
+    if (currentImageIndex2 < 0) {
+        currentImageIndex2 = images.length - 1;
+    }
+    document.getElementById("mainImage2").src = images[currentImageIndex2];
+}
 
-saibamais.addEventListener('click', () => {
-    farcryseis.scrollIntoView({ behavior: "smooth" });
-})
+function changeImage3(direction) {
+    const images = [
+        "img-eletronicos/controle-ps5-white.jpg",
+        "img-eletronicos/controle-ps5-black.png",
+        "img-eletronicos/controle-ps5-rosa.png"
+    ];
+    currentImageIndex3 = (currentImageIndex3 + direction) % images.length;
+    if (currentImageIndex3 < 0) {
+        currentImageIndex3 = images.length - 1;
+    }
+    document.getElementById("mainImage3").src = images[currentImageIndex3];
+}
+
+
 
 
 
