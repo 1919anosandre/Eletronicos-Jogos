@@ -1,3 +1,5 @@
+/* global*/
+
 * {
     margin: 0;
     text-transform: capitalize;
@@ -23,28 +25,134 @@ body {
 
 }
 
-/* Estilo para o slideshow */
-.slideshow-container {
-    max-width: 100%;
-    height: 500px;
-    overflow: hidden;
-    
+html {
+    overflow-x: hidden;
+
 
 }
 
-.slides {
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(14, 13, 13);
+
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+    background-color: #f00034;
+
+}
+
+/*animaçoes do site obs: css*/
+@keyframes ps2Animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+@keyframes animacao-padding {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1.07);
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* barra de pesquisa*/
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row img {
+    height: 10px;
+    width: 20px;
+    margin-left: 10px;
+}
+
+.row img:hover {
+    cursor: pointer;
+}
+
+.row input {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    margin-left: 10px;
+    color: #270844;
+}
+
+
+/* galeria, parte onde anuncuia novos jogos e promoções  */
+.Container-galeria {
+    max-width: 100%;
+    height: 500px;
+    overflow: hidden;
+
+}
+
+.galeria {
     display: none;
     position: relative;
     width: 100%;
     height: 100vh;
-    
 
 }
 
-.slideshow-container img {
+.Container-galeria img {
     width: 100%;
     height: 100vh;
-    
     object-fit: cover;
     background-position: center;
     display: inline-block;
@@ -52,7 +160,6 @@ body {
 
 }
 
-/* Texto sobre as imagens */
 .text-overlay {
     position: absolute;
     top: 50%;
@@ -63,7 +170,6 @@ body {
     max-width: 1200px;
 }
 
-/* Botões anterior e próximo */
 .prev,
 .next {
     cursor: pointer;
@@ -90,28 +196,10 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Efeito de transição */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-html {
-    overflow-x: hidden;
-
-
-}
-
 
 .texto-promocao {
     display: flex;
@@ -120,7 +208,7 @@ html {
     flex-direction: column;
     margin: 100px auto 0;
     width: 100%;
-    
+    /* Garante que a largura ocupe toda a página */
 }
 
 .texto-promocao h1 {
@@ -140,9 +228,7 @@ html {
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     text-align: center;
     width: 100%;
-    
     max-width: 800px;
-    
 }
 
 .texto-promocao a {
@@ -159,29 +245,12 @@ html {
     animation: animacao-padding 4s ease-in-out infinite alternate;
 }
 
-@keyframes animacao-padding {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-        
-    }
-
-    100% {
-        transform: scale(1.07);
-       
-    }
-}
-
 .texto-promocao a:hover {
     cursor: pointer;
 }
 
 .texto-promocao button {
     background: linear-gradient(135deg, #8A2BE2, #4B0082);
-    /* Roxo forte para um roxo mais escuro */
     padding: 10px;
     width: 200px;
     color: white;
@@ -190,17 +259,7 @@ html {
     margin-top: 5px;
 }
 
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(14, 13, 13);
-
-}
-
+/* estilização da scroll*/
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -215,11 +274,7 @@ main {
     border-top-right-radius: 5px;
 }
 
-/*section {
-    height: 100vh;
-}
-*/
-/* Contêiner principal da logo */
+/* logo da loja*/
 .Logo {
     display: flex;
     align-items: center;
@@ -238,6 +293,7 @@ main {
 
 }
 
+/* as li fica aparecendo indevidamente nos dispositivos moveis*/
 .dropdown {
     display: inline-block;
     justify-content: center;
@@ -258,7 +314,6 @@ main {
 
 .dropdown-content {
     display: none;
-    /* Esconde o dropdown por padrão */
     background-color: #100e14;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -286,7 +341,7 @@ main {
     display: block;
 }
 
-
+/* menu hamburguer */
 .mobile-menu {
     display: none;
     cursor: pointer;
@@ -305,18 +360,6 @@ main {
 
 }
 
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 .mobile-menu.active .line1 {
     transform: rotate(-45deg) translate(-8px, 8px);
 }
@@ -331,7 +374,25 @@ main {
 
 
 
-/* Estilização da imagem da logo */
+/* logo da loja*/
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00f, #0ff, #0f0, #ff0, #f00, #f0f, #00f);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    animation: ps2Animation 5s infinite linear;
+    background-size: 200% 200%;
+    letter-spacing: 2px;
+    font-weight: 700;
+
+}
+
 .Logo img {
     height: 30px;
     width: 30px;
@@ -360,6 +421,12 @@ main {
     align-items: center;
 
 }
+
+.Nav-Bar.active {
+    transform: translateX(0);
+    background: #23232e;
+}
+
 
 .Nav-Bar img {
     height: 8vh;
@@ -450,6 +517,7 @@ i {
     height: 80px;
 }
 
+/* imagens que representa cada parte do site ex : jogos , console e seus acessórios , pc e seus acessórios*/
 .cabecalho-jogos {
     height: 300px;
     display: flex;
@@ -483,22 +551,7 @@ i {
     background-size: cover;
 }
 
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: 2.5rem;
-    color: white;
-    text-shadow: 2px 2px 4px black;
-    text-align: center;
-    background-color: #f00034;
-
-}
-
-
-
+/* container dos jogos do site*/
 .Container-Jogos-PS3,
 .Container-Jogos-PS4,
 .Container-Jogos-PS5 {
@@ -509,33 +562,6 @@ h6 {
     padding: 1px;
     width: 100%;
     background-color: #100e14;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.row img {
-    height: 20px;
-    width: 20px;
-    margin-left: 10px;
-}
-
-.row img:hover {
-    cursor: pointer;
-}
-
-.row input {
-    background-color: rgb(255, 255, 255);
-    color: #270844;
-    padding: 10px;
-    border-radius: 10px;
-    width: 200px;
-    margin-left: 10px;
-
-
 }
 
 .Jogos {
@@ -604,6 +630,7 @@ span {
     color: #ffffff;
 }
 
+/* container console e pc e seus acessórios*/
 .Container-Console,
 .Container-PC,
 .Container-Acessorios-console {
@@ -713,6 +740,7 @@ span {
 
 }
 
+/*container formulario onde as notificaçoes do site irao para o cliente */
 .Container-Form {
     display: flex;
     justify-content: space-around;
@@ -776,6 +804,7 @@ span {
     background-color: #1f1e1e;
 }
 
+/* container footer informaçoes adicionais e ultima parte do site   */
 .Container-Footer {
     display: flex;
     justify-content: center;
@@ -859,6 +888,7 @@ i span {
     font-size: 1.1rem;
 }
 
+/*container e estilizaçao do carrinho de compras */
 .Container-Pedido {
     display: none;
     overflow-y: auto;
@@ -958,20 +988,7 @@ i span {
 }
 
 
-@keyframes ps2Animation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
+/* container sobre nós*/
 .Container-Sobre {
     display: flex;
     justify-content: center;
@@ -1016,6 +1033,7 @@ i span {
     padding: 20px;
 }
 
+/*media query para dispositivos móveis  */
 @media all and (max-width: 767px) {
     body {
         background-size: contain
@@ -1156,11 +1174,11 @@ i span {
         flex-direction: column;
     }
 
-    .slideshow-container {
+    .Container-galeria {
         width: 100%;
     }
 
-    .slideshow-container img {
+    .Container-galeria img {
         max-width: 100%;
         display: block;
         top: 0;
@@ -1171,6 +1189,7 @@ i span {
 
 }
 
+/*media query para tablet ou semelhante */
 @media (min-width: 768px) and (max-width: 999px) {
     .Container-Principal {
         flex-direction: column;
@@ -1199,11 +1218,7 @@ i span {
     }
 }
 
-.Nav-Bar.active {
-    transform: translateX(0);
-    background: #23232e;
-}
-
+/*efeito animaçao */
 .Jogos :nth-child(2) {
     transition-delay: 400ms;
 }
