@@ -911,6 +911,19 @@ i span {
     align-items: center;
 }
 
+.row-fechar{
+display: flex;
+top: 0;
+left: 0;
+}
+.row-fechar img{
+height: 20px;
+margin-left: auto;
+
+}
+.row-fechar:hover{
+cursor: pointer;
+}
 
 .Itens-Carrinho {
     display: flex;
