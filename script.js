@@ -157,6 +157,13 @@ carrinhoButton.addEventListener('click', () => {
     }
 });
 
+//fechar carrinho
+
+const fecharCarrinho = document.querySelector('.fechar-carrinho')
+
+fecharCarrinho.addEventListener('click', ()=>{
+document.querySelector('.Container-Pedido').style.display = 'none'
+})
 
 
 function adicionarCarrinho(event) {
