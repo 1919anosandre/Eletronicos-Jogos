@@ -437,6 +437,12 @@ h6 {
     cursor: pointer;
 }
 
+a .usuario{
+height: 6vh;
+margin-left: 13px;
+cursor: pointer;
+}
+
 .Nav-Bar span {
     color: white;
 }
