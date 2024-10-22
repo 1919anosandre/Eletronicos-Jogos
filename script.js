@@ -147,6 +147,13 @@ function ready() {
     }
 }
 
+//fechar carrinho
+const fecharCarrinho = document.querySelector('.fechar-carrinho')
+
+fecharCarrinho.addEventListener('click', ()=>{
+document.querySelector('.Container-Pedido').style.display = 'none'
+})
+
 const carrinhoButton = document.querySelector('.Carrinho');
 carrinhoButton.addEventListener('click', () => {
     if (quantidadePedido > 0) {
@@ -157,13 +164,6 @@ carrinhoButton.addEventListener('click', () => {
     }
 });
 
-//fechar carrinho
-
-const fecharCarrinho = document.querySelector('.fechar-carrinho')
-
-fecharCarrinho.addEventListener('click', ()=>{
-document.querySelector('.Container-Pedido').style.display = 'none'
-})
 
 
 function adicionarCarrinho(event) {
@@ -390,6 +390,8 @@ function changeImage3(direction) {
     }
     document.getElementById("mainImage3").src = images[currentImageIndex3];
 }
+
+
 
 
 
