@@ -911,18 +911,20 @@ i span {
     align-items: center;
 }
 
-.row-fechar{
-display: flex;
-top: 0;
-left: 0;
+.row-fechar {
+    display: flex;
+    top: 0;
+    left: 0;
 }
-.row-fechar img{
-height: 20px;
-margin-left: auto;
+
+.row-fechar img {
+    height: 20px;
+    margin-left: auto;
 
 }
-.row-fechar:hover{
-cursor: pointer;
+
+.row-fechar:hover {
+    cursor: pointer;
 }
 
 .Itens-Carrinho {
@@ -1103,22 +1105,22 @@ cursor: pointer;
     .Container-Jogos-PS3,
     .Container-Jogos-PS4,
     .Container-Jogos-PS5 {
-        gap: 7px;
+        gap: 10px;
     }
 
 
     .Container-Acessorios-console,
     .Container-PC,
     .Container-Console {
-        flex-direction: column;
-        max-width: 100%;
+        gap: 2px;
+
     }
 
 
     .Console,
     .PC,
     .card-acessorios {
-        width: 70%;
+        width: 60%;
         margin-top: 6px;
     }
 
