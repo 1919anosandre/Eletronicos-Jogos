@@ -1102,6 +1102,10 @@ i span {
         width: 100%;
     }
 
+    .Container-Pedido {
+        width: 70%;
+    }
+
     .Container-Jogos-PS3,
     .Container-Jogos-PS4,
     .Container-Jogos-PS5 {
@@ -1187,6 +1191,7 @@ i span {
 
     .Pedido {
         flex-direction: column;
+       
     }
 
     .Container-galeria {
@@ -1201,6 +1206,9 @@ i span {
         height: 600px;
     }
 
+    #Finalizar-Pedido{
+        text-align: center;
+    }
 
 }
 
