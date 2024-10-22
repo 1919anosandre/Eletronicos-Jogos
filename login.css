@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    }
+    
+    body{
+    height: 100vh;
+    width: 100%;
+    background-image: url('img-eletronicos/ilustracao.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+    .container-autenticacao-cadastrar , .container-autenticacao-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto 0;
+    background-color: rgb(255, 255, 255 , 0.5);
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    }
+    
+    .form{
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .form h1{
+    color: #f00034;
+    text-align:center ;
+    font-size: 50px;
+    font-weight: 900;
+    }
+    
+    .form label{
+     font-size: 25px;
+     color: #270844;
+     font-weight: 700;
+     letter-spacing: 1px;
+     margin-top: 10px;
+    
+    }
+    
+    .form input{
+    width: 250px;
+    padding: 15px;
+    color: #270844;
+    border-radius: 10px;
+    border: 1px solid #f0edf1;
+    font-size: 17px;
+    }
+    
+    .form a{
+    color: #270844;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 10px;
+    }
+    
+    .form a:hover{
+    color: #1d1c1c;
+    }
+    
+    .cadastrar-button , .logar-button{
+    margin-top: 10px;
+    color:#ffffff;
+    background-color:#270844;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    }
+    
+    .cadastrar-button:hover , .logar-button{
+        cursor: pointer;
+    }
