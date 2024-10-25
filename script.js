@@ -63,10 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const Consoles = document.querySelector('.Console-li');
         const PC = document.querySelector('.PC-Gamer');
 
-        Container_JogosPs4.style.display = 'none';
-        Container_JogosPs3.style.display = 'flex';
-        Container_JogosPs5.style.display = 'none';
-        Container_PC.style.display = 'flex';
+    
 
         JogosPS3.addEventListener("click", () => {
             Container_JogosPs3.scrollIntoView({ behavior: "smooth" });
@@ -74,12 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         JogosPS4.addEventListener("click", () => {
             Container_JogosPs4.scrollIntoView({ behavior: "smooth" });
-            Container_JogosPs4.style.display = 'flex'
         });
 
         JogosPS5.addEventListener("click", () => {
             Container_JogosPs5.scrollIntoView({ behavior: "smooth" });
-            Container_JogosPs5.style.display = 'flex'
         });
 
         Consoles.addEventListener("click", () => {
@@ -391,10 +386,13 @@ function changeImage3(direction) {
     document.getElementById("mainImage3").src = images[currentImageIndex3];
 }
 
+const promocaoFarCry = document.querySelector('.promocao-farcryseis')
+const card_direcinar = document.querySelector('.promocao-farcry-card')
+
+promocaoFarCry.addEventListener('click', ()=>{
+card_direcinar.scrollIntoView({ behavior: "smooth" });
+
+card_direcinar.style.border = '02px solid red'
 
 
-
-
-
-
-
+})
