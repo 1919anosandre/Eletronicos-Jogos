@@ -293,53 +293,7 @@ h6 {
 
 }
 
-/* as li fica aparecendo indevidamente nos dispositivos moveis*/
-.dropdown {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
 
-}
-
-.dropbtn {
-    background-color: #100e14;
-    color: white;
-    padding: 10px;
-    font-size: 1.4rem;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    margin: 0 12px;
-}
-
-.dropdown-content {
-    display: none;
-    background-color: #100e14;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    position: absolute;
-}
-
-.dropdown-content li {
-    color: rgb(255, 255, 255);
-    padding: 12px 16px;
-    text-decoration: none;
-    font-size: 1.3rem;
-    z-index: 1;
-}
-
-.dropdown-content li:hover {
-    color: #7F54B3;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-/* Mostra o dropdown ao passar o mouse */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 /* menu hamburguer */
 .mobile-menu {
@@ -422,6 +376,14 @@ h6 {
 
 }
 
+.Nav-Bar li{
+    color: rgb(255, 255, 255);
+    padding: 0 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
 .Nav-Bar.active {
     transform: translateX(0);
     background: #23232e;
@@ -447,30 +409,64 @@ cursor: pointer;
     color: white;
 }
 
-/* Estilização dos itens da navegação */
-.Inicio,
-.Jogos-PS3,
-.Jogos-PS4,
-.Jogos-PS5,
-.PC-Gamer,
-.Console-li {
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    font-weight: 700;
-    padding: 15px;
-    color: #ffffff;
+
+/* as li fica aparecendo indevidamente nos dispositivos moveis*/
+.dropdown {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.Inicio:hover,
-.Jogos-PS3:hover,
-.Jogos-PS4:hover,
-.Jogos-PS5:hover,
-.PC-Gamer:hover,
-.Console-li:hover {
+.dropbtn {
+    background-color: #100e14;
+    color: white;
+    padding: 10px;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0 12px;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #100e14;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+
+.dropdown-content li {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    z-index: 1;
+}
+
+.dropdown-content li:hover {
+    color: #7F54B3;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostra o dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+.Nav-Bar li:hover {
     cursor: pointer;
     transform: scale(1.01);
     transition: 1s;
-    color: #0f0;
+    color:  #f00034;
 }
 
 .Funcionamento {
@@ -568,6 +564,7 @@ i {
     padding: 1px;
     width: 100%;
     background-color: #100e14;
+    padding-block-end: 5px;
 }
 
 .Jogos {
@@ -596,7 +593,6 @@ i {
 .Jogos img {
     height: 192px;
     width: 100%;
-    border-radius: 4px;
     object-fit: cover;
     margin-top: 0;
 
@@ -623,7 +619,6 @@ span {
     width: 80%;
     letter-spacing: 1px;
     padding: 3px;
-    margin-top: 5px;
     background-color: #270844;
     color: #ffffff;
     font-size: 0.9rem;
