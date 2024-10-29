@@ -117,7 +117,7 @@ h6 {
     background-color: rgb(17, 17, 17);
     width: 100%;
     height: 20vh;
-   }
+}
 
 .row {
     display: flex;
@@ -390,7 +390,7 @@ h6 {
 
 }
 
-.Nav-Bar li{
+.Nav-Bar li {
     color: rgb(255, 255, 255);
     padding: 0 10px;
     text-decoration: none;
@@ -413,10 +413,16 @@ h6 {
     cursor: pointer;
 }
 
-a .usuario{
-height: 6vh;
-margin-left: 13px;
-cursor: pointer;
+.usuario {
+    margin-left: 13px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.usuario img {
+    height: 6vh;
 }
 
 .Nav-Bar span {
@@ -479,7 +485,7 @@ cursor: pointer;
     cursor: pointer;
     transform: scale(1.01);
     transition: 1s;
-    color:  #f00034;
+    color: #f00034;
 }
 
 .Funcionamento {
@@ -1078,15 +1084,14 @@ i span {
 
     .Nav-Bar li {
         margin-left: 0;
-        opacity: 0;
+        display: none;
         font-size: 1.6rem;
     }
 
     .Nav-Bar li.active {
-        opacity: 1;
+        display: flex;
         transition: opacity 0.3s ease-in-out;
     }
-
 
     .mobile-menu {
         display: block;
@@ -1200,7 +1205,7 @@ i span {
 
     .Pedido {
         flex-direction: column;
-       
+
     }
 
     .Container-galeria {
@@ -1215,7 +1220,7 @@ i span {
         height: 600px;
     }
 
-    #Finalizar-Pedido{
+    #Finalizar-Pedido {
         text-align: center;
     }
 
