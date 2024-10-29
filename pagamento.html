@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagamento</title>
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+    <div class="container-pag">
+    <form class="form" method="post">
+<h1>formas de pagamento</h1>
+<div class="row">
+<img src="img-eletronicos/pix.jpg.jpeg" class="pix-img" alt="">
+<img src="img-eletronicos/cartao.jpg.jpeg" class="cartao-img" alt="">
+<img src="img-eletronicos/dinheiro.jpg.jpeg" class="dinheiro-img" alt="">
+</div>
+<div class="cartao-inputs">
+    <h2>informe os dados do seu cartão</h2>
+<label for="nome">nome</label>
+<input type="text" class="nome" placeholder="digite o titular do cartão">
+
+<label for="numero-cartao">Numero do Cartão</label>
+<input type="text" class="numero-cartao" placeholder="digite o numero do cartão">
+
+<label for="cpf">CPF</label>
+<input type="text" class="cpf" placeholder="digite o cpf do titular">
+
+<label for="cvv">CVV</label>
+<input type="text" class="CVV" placeholder="digite o seu CVV">
+
+<label for="senha">Senha</label>
+<input type="text" class="CVV" placeholder="digite a sua senha">
+<button class="finalizar-compra-cartao">finalizar</button>
+</div>
+</form>
+
+<div class="pag-pix">
+    <h3>insira sua chave pix</h3>
+    <input type="text" placeholder="digite sua chave pix" class="pix-input">
+</div>
+</div>
+
+<script src="pagamento.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    text-transform: capitalize;
+    padding: 0;
+    list-style: none;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+    user-select: none;
+    outline: none;
+
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+background-color: rgb(20, 20, 20);
+
+}
+
+.pag-pix{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.pag-pix input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(204, 201, 201);
+    width: 200px;
+    color: #270844;
+    font-size: 1.1rem;
+    margin: auto;
+}
+
+.pag-pix h3{
+font-size: 1.3rem;
+font-weight: 700;
+color: #270844;
+}
+
+.container-pag{
+display: flex;
+margin: 100px auto 0;
+background-color: white;
+max-width: 500px;
+width: 100%;
+border-radius: 10px;
+height: 630px;
+}
+
+.form{
+display: flex;
+flex-direction: column;
+margin-left: 10px;
+}
+
+.form h1{
+color: #270844;
+font-size: 1.7rem;
+font-weight: 700;
+}
+
+.cartao-inputs{
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.cartao-inputs h2{
+color: #270844;
+font-size: 1.7rem;
+font-weight: 700;
+margin-top: 10px;
+}
+
+.cartao-inputs label{
+color: #270844;
+font-size: 1.1rem;
+font-weight: 900;
+align-items: start;
+
+}
+
+.cartao-inputs input{
+padding: 15px;
+border-radius: 10px;
+border: 1px solid rgb(204, 201, 201);
+width: 80%;
+color: #270844;
+font-size: 1.1rem;
+}
+
+.cartao-inputs button{
+    background-color: #270844;
+    padding: 10px;
+    width: 200px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto 130px;
+}
+.row{
+display: flex;
+justify-content: space-around;
+}
+
+.row img{
+height: 70px;
+width: 70px;
+cursor: pointer;
+}
+
+.row img:hover{
+border: 2px solid #270844 ;
+}
