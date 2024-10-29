@@ -108,14 +108,26 @@ h6 {
 }
 
 /* barra de pesquisa*/
+
+
+.barra-pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    height: 20vh;
+   }
+
 .row {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 36px;
 }
 
 .row img {
-    height: 10px;
+    height: 20px;
     width: 20px;
     margin-left: 10px;
 }
@@ -128,9 +140,10 @@ h6 {
     background-color: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 10px;
-    width: 200px;
-    margin-left: 10px;
+    width: 300px;
     color: #270844;
+    font-size: 1.1rem;
+    border: 2px solid rgb(245, 242, 242);
 }
 
 
@@ -356,16 +369,17 @@ h6 {
 
 
 /* Estilização do contêiner da navegação */
+
 .Container-Nav {
     display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
-    position: fixed;
     width: 100%;
     z-index: 1;
     left: 0;
     background-color: #100e14;
+    position: fixed;
 
 }
 
@@ -378,9 +392,9 @@ h6 {
 
 .Nav-Bar li{
     color: rgb(255, 255, 255);
-    padding: 0 5px;
+    padding: 0 10px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     z-index: 1;
 }
 
@@ -408,7 +422,6 @@ cursor: pointer;
 .Nav-Bar span {
     color: white;
 }
-
 
 /* as li fica aparecendo indevidamente nos dispositivos moveis*/
 .dropdown {
@@ -477,11 +490,6 @@ cursor: pointer;
     font-weight: 600;
     margin-left: 20px;
     letter-spacing: 2px;
-}
-
-.barra-pesquisa {
-    display: flex;
-    justify-content: space-around;
 }
 
 .especificacoes {
