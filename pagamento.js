@@ -8,6 +8,20 @@ if(numeroCartao === '' && cvv === '' && cpf ===''){
 alert('por favor preencha todos os campos!')
 }
 
+cpf.addEventListener('keypress' , ()=>{
+let inputLength = cpf.value.length
+
+if(inputLength === 3 || inputLength ===7){
+cpf.value += '.'
+}
+else if(inputLength === 11){
+cpf.value += '-'
+}
+else if(inputLength > 13){
+alert('cpf invalido')
+}
+})
+
 
 /*let tiposCartoes = {
     visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
@@ -45,5 +59,6 @@ document.addEventListener('DOMContentLoaded' , ()=>{
     pagPix.style.display = 'flex';
     })
 })
+
 
 
