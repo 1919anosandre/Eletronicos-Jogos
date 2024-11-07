@@ -3,41 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>autenticação</title>
+    <title>Autenticação</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="container-autenticacao-cadastrar">
-    <form class="form" method="post">
-        <h1>cadastre-se</h1>
+        <form id="registerForm" class="form">
+            <h1>Cadastre-se</h1>
 
-        <label for="email">E-mail</label>
-        <input type="text" placeholder="digite seu e-mail" class="email">
+            <label for="registerEmail">E-mail</label>
+            <input type="email" id="registerEmail" placeholder="Digite seu e-mail" required>
 
-        <label for="password">Senha</label>
-        <input type="password" placeholder="digite sua senha" class="senha">
+            <label for="registerPassword">Senha</label>
+            <input type="password" id="registerPassword" placeholder="Digite sua senha" required>
 
-        <label for="confirmpassword">Confirmar senha</label>
-        <input type="password" placeholder="confirsmar senha" class="senha">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input type="password" id="confirmPassword" placeholder="Confirmar senha" required>
 
-        <button class="cadastrar-button">Cadastrar</button>
-    </form>
+            <button type="submit" class="cadastrar-button">Cadastrar</button>
+        </form>
     </div>
 
     <div class="container-autenticacao-login">
-        <form class="form" method="post">
+        <form id="loginForm" class="form">
             <h1>Login</h1>
     
-            <label for="email">E-mail</label>
-            <input type="text" placeholder="digite seu e-mail" class="email">
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" placeholder="Digite seu e-mail" required>
     
-            <label for="password">Senha</label>
-            <input type="password" placeholder="digite sua senha" class="senha">
-            <a href="#" class="cadastre-se">não possui cadastro? cadastre-se</a>
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
+            <a href="#" class="cadastre-se">Não possui cadastro? Cadastre-se</a>
 
-            <button class="logar-button">Logar</button>
+            <button type="submit" class="logar-button">Logar</button>
         </form>
-        </div>
+    </div>
+    
     <script src="login.js"></script>
 </body>
 </html>
