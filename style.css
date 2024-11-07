@@ -615,7 +615,7 @@ i {
 span {
     color: #f00034;
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .promocao {
@@ -624,10 +624,13 @@ span {
 }
 
 .preco-promocao {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     margin-left: 10px;
 }
 
+del{
+font-size: 0.7rem;
+}
 .Jogos button {
     border-radius: 10px;
     width: 80%;
