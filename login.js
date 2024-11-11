@@ -1,112 +1,4 @@
-import { app } from "./firebase";
-import { 
-    signInWithEmailAndPassword, 
-    getAuth, 
-    signOut, 
-    signInWithPopup,
-    createUserWithEmailAndPassword, // Corrigido: sem espaço
-    sendPasswordResetEmail,
-    GoogleAuthProvider 
-} from "firebase/auth";
 
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
-
-const loginComEmailESenha = async (email, senha) => {
-    try {
-        await signInWithEmailAndPassword(auth, email, senha);
-        alert("Login bem-sucedido!");
-    } catch (error) {
-        console.error("Erro ao fazer login:", error);
-        alert("Falha no login: " + error.message);
-    }
-};
-
-const registrarComEmailESenha = async (email, pwd) => { // Removi o 'name' que não é utilizado
-    try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, pwd); // Corrigido aqui
-        const user = userCredential.user;
-        alert("Cadastro bem-sucedido!");
-    } catch (error) {
-        console.error("Erro ao registrar:", error);
-        alert("Falha no cadastro: " + error.message);
-    }
-};
-
-const recuperarSenha = async (email) => {
-    try {
-        await sendPasswordResetEmail(auth, email);
-        alert("Email de recuperação enviado");
-    } catch (error) {
-        console.error("Erro ao recuperar senha:", error);
-        alert("Erro ao enviar email de recuperação: " + error.message);
-    }
-};
-
-const logout = async () => {
-    try {
-        await signOut(auth);
-        alert("Usuário desconectado");
-    } catch (error) {
-        console.error("Erro ao fazer logout:", error);
-    }
-};
-
-const entrarComGoogle = async () => {
-    try {
-        const res = await signInWithPopup(auth, googleProvider);
-        const user = res.user;
-        alert("Login com Google bem-sucedido!");
-    } catch (error) {
-        console.error("Erro ao fazer login com Google:", error);
-    }
-};
-
-// Event listeners para o envio dos formulários
-document.getElementById('registerForm').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Previne o envio padrão do formulário
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    if (password !== confirmPassword) {
-        alert("As senhas não coincidem!");
-        return;
-    }
-
-    await registrarComEmailESenha(email, password);
-});
-
-document.getElementById('loginForm').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Previne o envio padrão do formulário
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    await loginComEmailESenha(email, password);
-});
-
-// Event listeners for form submissions
-document.getElementById('registerForm').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Prevent form submission
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    if (password !== confirmPassword) {
-        alert("As senhas não coincidem!");
-        return;
-    }
-
-    await registrarComEmailESenha(email, password);
-});
-
-document.getElementById('loginForm').addEventListener('submit', async (event) => {
-   event.preventDefault(); // Prevent form submission
-   const email = document.getElementById('loginEmail').value;
-   const password = document.getElementById('loginPassword').value;
-
-   await loginComEmailESenha(email, password);
-});
 // se nao possuir conta ou nao estiver cadastra-do entao ira se cadastrar
 document.addEventListener('DOMContentLoaded', () => {
     const cadastrar = document.querySelector('.cadastre-se');
@@ -127,18 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //validar e-mail para enviar notificação
-
-let inputemail = document.querySelector('#registerEmail')
+let inputEmail = document.querySelector('#registerEmail');
+let registrarSenhaInput = document.querySelector('#registerPassword');
+let confirmarSenhaInput = document.querySelector('#confirmPassword');
 
 function validacao() {
-    const email = document.querySelector('#registerEmail').value;
+    const email = inputEmail.value;
 
-    if ( email === '') {
+    if (email === '') {
         alert('Preencha todos os campos !!');
         return false;
     }
-    return validarEmail(document.querySelector('#registerEmail'));
+    return validarEmail(inputEmail);
 }
+
 function validarEmail(field) {
     const usuario = field.value.substring(0, field.value.indexOf("@"));
     const dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
@@ -152,13 +46,145 @@ function validarEmail(field) {
         (dominio.search(".") !== -1) &&
         (dominio.indexOf(".") >= 1) &&
         (dominio.lastIndexOf(".") < dominio.length - 1)) {
-        inputemail.style.border = '02px solid green'
-
+        inputEmail.style.border = '2px solid green';
         return true;
     } else {
         alert("E-mail inválido");
-        inputemail.style.border = '02px solid red'
+        inputEmail.style.border = '2px solid red';
         return false;
     }
 }
+
+function senhasCadastrar() {
+    const registrarSenha = registrarSenhaInput.value;
+    const confirmarSenha = confirmarSenhaInput.value;
+
+    if (registrarSenha.length < 8) {
+        alert('A senha precisa conter no mínimo 8 caracteres');
+        registrarSenhaInput.style.border = '2px solid red';
+        return false;
+    }
+    if (registrarSenha !== confirmarSenha) {
+        alert('As senhas não são iguais');
+        registrarSenhaInput.style.border = '2px solid red';
+        confirmarSenhaInput.style.border = '2px solid red';
+        return false;
+    }
+
+    const senhaForte = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()_+{}\[\]:;<>,.?~\\/-])/;
+    if (senhaForte.test(registrarSenha)) {
+        registrarSenhaInput.style.border = '2px solid green';
+        return true;
+    } else {
+        registrarSenhaInput.style.border = '2px solid red';
+        alert('A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial');
+        return false;
+    }
+}
+
+// Função de login
+function login() {
+    const inputEmailLogin = document.querySelector('#loginEmail');
+    const inputSenhaLogin = document.querySelector('#loginPassword');
+
+    const email = inputEmailLogin.value;
+    const senha = inputSenhaLogin.value;
+
+    if (email === '' || senha === '') {
+        alert('Preencha todos os campos de login!');
+        return false;
+    }
+
+    // Validação do e-mail
+    if (!validarEmail(inputEmailLogin)) {
+        return false;
+    }
+
+    // Validação da senha
+    if (senha.length < 8) {
+        alert('A senha precisa conter no mínimo 8 caracteres');
+        inputSenhaLogin.style.border = '2px solid red';
+        return false;
+    }
+
+    const senhaForteLogin = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()_+{}\[\]:;<>,.?~\\/-])/;
+    if (senhaForteLogin.test(senha)) {
+        inputSenhaLogin.style.border = '2px solid green';
+        alert('Login realizado com sucesso!');
+        return true;
+    } else {
+        inputSenhaLogin.style.border = '2px solid red';
+        alert('A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial');
+        return false;
+    }
+}document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+
+    // Função para validar o formulário de registro
+    registerForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        const email = document.getElementById('registerEmail').value;
+        const senhaInput = document.getElementById('registerPassword');
+        const confirmarSenhaInput = document.getElementById('confirmPassword');
+
+        const senha = senhaInput.value;
+        const confirmarSenha = confirmarSenhaInput.value;
+
+        // Validação simples
+        if (email === '' || senha === '' || confirmarSenha === '') {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        if (senha.length < 8) {
+            alert('A senha precisa conter no mínimo 8 caracteres');
+            senhaInput.style.border = '2px solid red'; 
+            return false;
+        }
+
+        if (senha !== confirmarSenha) {
+            alert('As senhas não são iguais');
+            senhaInput.style.border = '2px solid red'; 
+            confirmarSenhaInput.style.border = '2px solid red'; 
+            return false;
+        }
+
+        const senhaForte = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()_+{}\[\]:;<>,.?~\\/-])/;
+        if (senhaForte.test(senha)) {
+            senhaInput.style.border = '2px solid green'; // Corrigido para usar o elemento correto
+            // Se tudo estiver certo, redirecionar
+            window.location.href = 'http://127.0.0.1:5500/station-games/index.html'; // Altere para a URL desejada
+        } else {
+            senhaInput.style.border = '2px solid red'; // Corrigido para usar o elemento correto
+            alert('A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial');
+            return false;
+        }
+    });
+});
+const loginForm = document.getElementById('loginForm');
+
+    // Função para validar o formulário de login
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        const email = document.getElementById('loginEmail').value;
+        const senha = document.getElementById('loginPassword').value;
+
+        // Validação simples
+        if (email === '' || senha === '') {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        if (senha.length < 8) {
+            alert('A senha precisa conter no mínimo 8 caracteres');
+            registrarSenhaInput.style.border = '2px solid red';
+            return false;
+        }
+
+        // Se tudo estiver certo, redirecionar
+        window.location.href = 'http://127.0.0.1:5500/station-games/index.html'; // Altere para a URL desejada
+    });
+
 
