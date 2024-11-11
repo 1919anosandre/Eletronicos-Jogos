@@ -10,7 +10,6 @@
     <div class="container-autenticacao-cadastrar">
         <form id="registerForm" class="form">
             <h1>Cadastre-se</h1>
-
             <label for="registerEmail">E-mail</label>
             <input type="email" id="registerEmail" placeholder="Digite seu e-mail" required>
 
@@ -40,5 +39,34 @@
     </div>
     
     <script src="login.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDtq9imdG_X0orXaWBYXmmcPT79BkJZU2o",
+          authDomain: "stationgames-d7c99.firebaseapp.com",
+          projectId: "stationgames-d7c99",
+          storageBucket: "stationgames-d7c99.firebasestorage.app",
+          messagingSenderId: "742108482042",
+          appId: "1:742108482042:web:335238c51c419c8246bc43"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        firebase.initializeApp(firebaseConfig);
+
+    console.log('antes');
+    firebase.auth().signInWithEmailAndPassword("andreluizgamer14@gmail.com", "Marlos112").then(response => {
+        console.log('success', response)
+    }).catch(error => {
+        console.log('error', error)
+    });
+    console.log('depois')
+      </script>
 </body>
 </html>
